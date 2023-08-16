@@ -1,0 +1,1164 @@
+{
+  "address": "0x93D3AD9b47ef79Cb77fD6C54cb9Aa1D8634f8786",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "previousAdmin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newAdmin",
+          "type": "address"
+        }
+      ],
+      "name": "AdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "beacon",
+          "type": "address"
+        }
+      ],
+      "name": "BeaconUpgraded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint192",
+          "name": "value",
+          "type": "uint192"
+        }
+      ],
+      "name": "ETHWithdrawn",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "epochLength",
+          "type": "uint64"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint192",
+          "name": "weiLimitPerEpoch",
+          "type": "uint192"
+        }
+      ],
+      "name": "EpochParamsUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint8",
+          "name": "version",
+          "type": "uint8"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint192",
+          "name": "value",
+          "type": "uint192"
+        }
+      ],
+      "name": "MintProxied",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_by",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_requested",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_assigned",
+          "type": "uint256"
+        }
+      ],
+      "name": "RoleUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "userAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint192",
+          "name": "weiLimitPerEpoch",
+          "type": "uint192"
+        }
+      ],
+      "name": "WeiLimitUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "ROLE_ACCESS_MANAGER",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ROLE_FAUCET_MANAGER",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ROLE_FAUCET_USER",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ROLE_UPGRADE_MANAGER",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "users",
+          "type": "address[]"
+        }
+      ],
+      "name": "addUsers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "epochLength",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "target",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "desired",
+          "type": "uint256"
+        }
+      ],
+      "name": "evaluateBy",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "features",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getImplementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getInitializedVersion",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        }
+      ],
+      "name": "getRole",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "required",
+          "type": "uint256"
+        }
+      ],
+      "name": "isFeatureEnabled",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "required",
+          "type": "uint256"
+        }
+      ],
+      "name": "isOperatorInRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "required",
+          "type": "uint256"
+        }
+      ],
+      "name": "isSenderInRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint192",
+          "name": "value",
+          "type": "uint192"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "postConstruct",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proxiableUUID",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "users",
+          "type": "address[]"
+        }
+      ],
+      "name": "removeUsers",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "_epochLength",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint192",
+          "name": "_weiLimitPerEpoch",
+          "type": "uint192"
+        }
+      ],
+      "name": "setEpochParams",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint192",
+          "name": "_weiLimitPerEpoch",
+          "type": "uint192"
+        }
+      ],
+      "name": "setWeiLimitPerEpochForUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_mask",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateFeatures",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "role",
+          "type": "uint256"
+        }
+      ],
+      "name": "updateRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "weiLeftInEpochForUser",
+      "outputs": [
+        {
+          "internalType": "uint192",
+          "name": "",
+          "type": "uint192"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "weiLimitPerEpoch",
+      "outputs": [
+        {
+          "internalType": "uint192",
+          "name": "",
+          "type": "uint192"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "weiLimitPerEpochForUser",
+      "outputs": [
+        {
+          "internalType": "uint192",
+          "name": "",
+          "type": "uint192"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "weiLimitPerEpochOverrides",
+      "outputs": [
+        {
+          "internalType": "uint192",
+          "name": "",
+          "type": "uint192"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_userAddress",
+          "type": "address"
+        }
+      ],
+      "name": "weiWithdrawnInCurrentEpoch",
+      "outputs": [
+        {
+          "internalType": "uint192",
+          "name": "",
+          "type": "uint192"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address payable",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint192",
+          "name": "value",
+          "type": "uint192"
+        }
+      ],
+      "name": "withdrawEth",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "withdrawalStats",
+      "outputs": [
+        {
+          "internalType": "uint64",
+          "name": "lastWithdrawalTimestamp",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint192",
+          "name": "weiWithdrawn",
+          "type": "uint192"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0xbdd20d5a058745542c2f99eb397d8808af7070d0662c76937318959925d160e3",
+  "receipt": {
+    "to": null,
+    "from": "0x5F185Da55f7BBD9217E3b3CeE06b180721FA6d34",
+    "contractAddress": "0x93D3AD9b47ef79Cb77fD6C54cb9Aa1D8634f8786",
+    "transactionIndex": 10,
+    "gasUsed": "1837139",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001040000080000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xb1e7ed55ca0e9006c1fa4878e53bc4c865534988952fded81fb3b17e93c3f4c3",
+    "transactionHash": "0xbdd20d5a058745542c2f99eb397d8808af7070d0662c76937318959925d160e3",
+    "logs": [
+      {
+        "transactionIndex": 10,
+        "blockNumber": 9526413,
+        "transactionHash": "0xbdd20d5a058745542c2f99eb397d8808af7070d0662c76937318959925d160e3",
+        "address": "0x93D3AD9b47ef79Cb77fD6C54cb9Aa1D8634f8786",
+        "topics": [
+          "0x7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb3847402498"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000000000000000001",
+        "logIndex": 30,
+        "blockHash": "0xb1e7ed55ca0e9006c1fa4878e53bc4c865534988952fded81fb3b17e93c3f4c3"
+      }
+    ],
+    "blockNumber": 9526413,
+    "cumulativeGasUsed": "5804795",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "b7da87fdff44f2d8a97fead9aef4f83a",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.11+commit.d7f03943\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"previousAdmin\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newAdmin\",\"type\":\"address\"}],\"name\":\"AdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"beacon\",\"type\":\"address\"}],\"name\":\"BeaconUpgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint192\",\"name\":\"value\",\"type\":\"uint192\"}],\"name\":\"ETHWithdrawn\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint64\",\"name\":\"epochLength\",\"type\":\"uint64\"},{\"indexed\":false,\"internalType\":\"uint192\",\"name\":\"weiLimitPerEpoch\",\"type\":\"uint192\"}],\"name\":\"EpochParamsUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint8\",\"name\":\"version\",\"type\":\"uint8\"}],\"name\":\"Initialized\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint192\",\"name\":\"value\",\"type\":\"uint192\"}],\"name\":\"MintProxied\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_by\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_requested\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_assigned\",\"type\":\"uint256\"}],\"name\":\"RoleUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"userAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint192\",\"name\":\"weiLimitPerEpoch\",\"type\":\"uint192\"}],\"name\":\"WeiLimitUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"ROLE_ACCESS_MANAGER\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ROLE_FAUCET_MANAGER\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ROLE_FAUCET_USER\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ROLE_UPGRADE_MANAGER\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"users\",\"type\":\"address[]\"}],\"name\":\"addUsers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"epochLength\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"target\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"desired\",\"type\":\"uint256\"}],\"name\":\"evaluateBy\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"features\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getImplementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getInitializedVersion\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"}],\"name\":\"getRole\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"required\",\"type\":\"uint256\"}],\"name\":\"isFeatureEnabled\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"required\",\"type\":\"uint256\"}],\"name\":\"isOperatorInRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"required\",\"type\":\"uint256\"}],\"name\":\"isSenderInRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint192\",\"name\":\"value\",\"type\":\"uint192\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"postConstruct\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"users\",\"type\":\"address[]\"}],\"name\":\"removeUsers\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"_epochLength\",\"type\":\"uint64\"},{\"internalType\":\"uint192\",\"name\":\"_weiLimitPerEpoch\",\"type\":\"uint192\"}],\"name\":\"setEpochParams\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"},{\"internalType\":\"uint192\",\"name\":\"_weiLimitPerEpoch\",\"type\":\"uint192\"}],\"name\":\"setWeiLimitPerEpochForUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_mask\",\"type\":\"uint256\"}],\"name\":\"updateFeatures\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"role\",\"type\":\"uint256\"}],\"name\":\"updateRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"upgradeToAndCall\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"}],\"name\":\"weiLeftInEpochForUser\",\"outputs\":[{\"internalType\":\"uint192\",\"name\":\"\",\"type\":\"uint192\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"weiLimitPerEpoch\",\"outputs\":[{\"internalType\":\"uint192\",\"name\":\"\",\"type\":\"uint192\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"}],\"name\":\"weiLimitPerEpochForUser\",\"outputs\":[{\"internalType\":\"uint192\",\"name\":\"\",\"type\":\"uint192\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"weiLimitPerEpochOverrides\",\"outputs\":[{\"internalType\":\"uint192\",\"name\":\"\",\"type\":\"uint192\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_userAddress\",\"type\":\"address\"}],\"name\":\"weiWithdrawnInCurrentEpoch\",\"outputs\":[{\"internalType\":\"uint192\",\"name\":\"\",\"type\":\"uint192\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint192\",\"name\":\"value\",\"type\":\"uint192\"}],\"name\":\"withdrawEth\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"withdrawalStats\",\"outputs\":[{\"internalType\":\"uint64\",\"name\":\"lastWithdrawalTimestamp\",\"type\":\"uint64\"},{\"internalType\":\"uint192\",\"name\":\"weiWithdrawn\",\"type\":\"uint192\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"author\":\"Basil Gorin\",\"details\":\"In order to get ETH, an account must have `ROLE_FAUCET_USER` permission`ROLE_FAUCET_MANAGER` can set ETH withdrawal limits for the faucet users\",\"events\":{\"ETHWithdrawn(address,uint192)\":{\"details\":\"Fired in `withdrawEth`\",\"params\":{\"to\":\"an address to send ETH to\",\"value\":\"amount of ETH to send, wei\"}},\"EpochParamsUpdated(uint64,uint192)\":{\"details\":\"Fired in `setEpochParams`\",\"params\":{\"epochLength\":\"new epoch length, seconds\",\"weiLimitPerEpoch\":\"new ETH limit per epoch, wei\"}},\"MintProxied(address,address,uint192)\":{\"details\":\"Fired in `mint`\",\"params\":{\"target\":\"target smart contract address to invoke function call on\",\"to\":\"an address to mint tokens to\",\"value\":\"amount of tokens to mint, wei\"}},\"WeiLimitUpdated(address,uint192)\":{\"details\":\"Fired in `setWeiLimitPerEpochForUser`\",\"params\":{\"userAddress\":\"user address to update the wei limit for\",\"weiLimitPerEpoch\":\"new ETH limit per epoch for user, wei\"}}},\"kind\":\"dev\",\"methods\":{\"addUsers(address[])\":{\"details\":\"Restricted access function to add faucet users in bulk mode\",\"params\":{\"users\":\"user addresses to add\"}},\"evaluateBy(address,uint256,uint256)\":{\"details\":\"Calculated based on:      1) operator's own permission set read from userRoles[operator]      2) target permission set - what is already set on the target      3) desired permission set - what do we want set target toCorner cases:      1) Operator is super admin and its permission set is `FULL_PRIVILEGES_MASK`:        `desired` bitset is returned regardless of the `target` permission set value        (what operator sets is what they get)      2) Operator with no permissions (zero bitset):        `target` bitset is returned regardless of the `desired` value        (operator has no authority and cannot modify anything)Example:      Consider an operator with the permissions bitmask     00001111      is about to modify the target permission set          01010101      Operator wants to set that permission set to          00110011      Based on their role, an operator has the permissions      to update only lowest 4 bits on the target, meaning that      high 4 bits of the target set in this example is left      unchanged and low 4 bits get changed as desired:      01010011\",\"params\":{\"desired\":\"desired set of permissions operator would like to set\",\"operator\":\"address of the contract operator which is about to set the permissions\",\"target\":\"input set of permissions to operator is going to modify\"},\"returns\":{\"_0\":\"resulting set of permissions given operator will set\"}},\"features()\":{\"details\":\"Effectively reads userRoles role for the contract itself\",\"returns\":{\"_0\":\"256-bit bitmask of the features enabled\"}},\"getImplementation()\":{\"returns\":{\"_0\":\"the current implementation address\"}},\"getInitializedVersion()\":{\"details\":\"Highest version that has been initialized.      Non-zero value means contract was already initialized.see {Initializable}, {reinitializer}.\",\"returns\":{\"_0\":\"highest version that has been initialized\"}},\"getRole(address)\":{\"details\":\"Having a simple getter instead of making the mapping public      allows enforcing the encapsulation of the mapping and protects from      writing to it directly in the inheriting smart contracts\",\"params\":{\"operator\":\"address of a user to read permissions for,      or self address to read global features of the smart contract\"}},\"isFeatureEnabled(uint256)\":{\"params\":{\"required\":\"set of features to check against\"},\"returns\":{\"_0\":\"true if all the features requested are enabled, false otherwise\"}},\"isOperatorInRole(address,uint256)\":{\"params\":{\"operator\":\"address of the user to check role for\",\"required\":\"set of permissions (role) to check\"},\"returns\":{\"_0\":\"true if all the permissions requested are enabled, false otherwise\"}},\"isSenderInRole(uint256)\":{\"params\":{\"required\":\"set of permissions (role) to check against\"},\"returns\":{\"_0\":\"true if all the permissions requested are enabled, false otherwise\"}},\"mint(address,address,uint192)\":{\"details\":\"Proxies the request as `target.mint(to, value)`, and can be used      to mint any \\\"mintable\\\" entity, that is having the `mint(address,uint256)`      function availableImplicitly limits the value to the 192-bits space, effectively protecting      target token contract from integer overflowRequires executor to have `ROLE_FAUCET_USER` permissionRequires Faucet to have the permission to execute `mint` function on the      target contract (don't forget to setup it)\",\"params\":{\"target\":\"target smart contract address to invoke function call on, required\",\"to\":\"an address to mint tokens to, required\",\"value\":\"amount of tokens to mint, wei, required\"}},\"postConstruct()\":{\"details\":\"\\\"Constructor replacement\\\" for upgradeable, must be execute immediately after deployment      see https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#initializers\"},\"proxiableUUID()\":{\"details\":\"Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.\"},\"removeUsers(address[])\":{\"details\":\"Restricted access function to remove faucet users in bulk mode\",\"params\":{\"users\":\"user addresses to remove\"}},\"setEpochParams(uint64,uint192)\":{\"details\":\"Restricted access function to update global throttling params,      updates `epochLength` and `weiLimitPerEpoch` global params\",\"params\":{\"_epochLength\":\"new epoch length, seconds, required\",\"_weiLimitPerEpoch\":\"new ETH limit per epoch, wei\"}},\"setWeiLimitPerEpochForUser(address,uint192)\":{\"details\":\"Restricted access function to update throttling params for a user,      updates `weiLimitPerEpochOverrides` param for a particular user\",\"params\":{\"_userAddress\":\"user address to update the wei limit for, required\",\"_weiLimitPerEpoch\":\"new ETH limit per epoch for user, wei\"}},\"updateFeatures(uint256)\":{\"details\":\"Requires transaction sender to have `ROLE_ACCESS_MANAGER` permissionFunction is left for backward compatibility with older versions\",\"params\":{\"_mask\":\"bitmask representing a set of features to enable/disable\"}},\"updateRole(address,uint256)\":{\"details\":\"Setting role to zero is equivalent to removing an all permissionsSetting role to `FULL_PRIVILEGES_MASK` is equivalent to      copying senders' permissions (role) to the userRequires transaction sender to have `ROLE_ACCESS_MANAGER` permission\",\"params\":{\"operator\":\"address of a user to alter permissions for,       or self address to alter global features of the smart contract\",\"role\":\"bitmask representing a set of permissions to      enable/disable for a user specified\"}},\"upgradeTo(address)\":{\"custom:oz-upgrades-unsafe-allow-reachable\":\"delegatecall\",\"details\":\"Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.\"},\"upgradeToAndCall(address,bytes)\":{\"custom:oz-upgrades-unsafe-allow-reachable\":\"delegatecall\",\"details\":\"Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event.\"},\"weiLeftInEpochForUser(address)\":{\"params\":{\"_userAddress\":\"user address to check amount of ETH available for\"},\"returns\":{\"_0\":\"available ETH for a user address available in current epoch\"}},\"weiLimitPerEpochForUser(address)\":{\"params\":{\"_userAddress\":\"user address to check the actual ETH limit for\"},\"returns\":{\"_0\":\"ETH limit for a user address, wei\"}},\"weiWithdrawnInCurrentEpoch(address)\":{\"params\":{\"_userAddress\":\"user address to check the withdrawn ETH for\"},\"returns\":{\"_0\":\"ETH withdrawn in current epoch by the user address, wei\"}},\"withdrawEth(address,uint192)\":{\"params\":{\"to\":\"an address to send ETH to, required\",\"value\":\"amount of ETH to send, wei, required\"}}},\"stateVariables\":{\"ROLE_FAUCET_MANAGER\":{\"details\":\"Grants permission to change throttling settings:      `epochLength`, `weiLimitPerEpoch`, `weiLimitPerEpochOverrides`Faucet manager is responsible for faucet configuration and managing      faucet users`ROLE_FAUCET_MANAGER` is required to execute:      `setEpochParams`, `setWeiLimitPerEpochForUser`\"},\"ROLE_FAUCET_USER\":{\"details\":\"Grants permission to withdraw ETH (throttled)Faucet user is allowed to get ETH via the faucet`ROLE_FAUCET_USER` is required to execute:      `withdrawEth`, `mint`\"},\"epochLength\":{\"details\":\"We divide the time into the epochs of equal size, and make sure      that no user exceeds the ETH limit set for one epochThe epoch length (size) is configurable, but we expect it to be equal      to 24h in most cases (the default value)Epoch length can be updated by the faucet manager `ROLE_FAUCET_MANAGER`Epoch length is measured in seconds\"},\"weiLimitPerEpoch\":{\"details\":\"Global ETH limit per epoch defines how much ETH it is allowed      to be consumed by the user address in one epochThis value can have a per user override, set by the faucet manager `ROLE_FAUCET_MANAGER`ETH limit per epoch can be updated by the faucet manager `ROLE_FAUCET_MANAGER`ETH limit per epoch is measured in wei\"},\"weiLimitPerEpochOverrides\":{\"details\":\"Overrides global ETH limit for a user addressZero values (non set values) are ignored and      global ETH limit per epoch (`weiLimitPerEpoch`) is usedMaps `user address => wei limit per epoch (override)`\"},\"withdrawalStats\":{\"details\":\"Keeps track of recent withdrawals to enable ETH supply throttlingEach time the user makes a withdrawal the record is being either      - created (if record doesn't yet exist)      - overwritten (if record is old, i.e. belong to the past epoch)      - cumulatively added (if record is recent, i.e. belongs to the current epoch)Maps `user address -> WithdrawalStat struct`\"}},\"title\":\"The Faucet\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"ROLE_ACCESS_MANAGER()\":{\"notice\":\"Access manager is responsible for assigning the roles to users,      enabling/disabling global features of the smart contractAccess manager can add, remove and update user roles,      remove and update global features\"},\"ROLE_UPGRADE_MANAGER()\":{\"notice\":\"Upgrade manager is responsible for smart contract upgrades,      see https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable      see https://docs.openzeppelin.com/contracts/4.x/upgradeable\"},\"evaluateBy(address,uint256,uint256)\":{\"notice\":\"Determines the permission bitmask an operator can set on the      target permission setUsed to calculate the permission bitmask to be set when requested     in `updateRole` and `updateFeatures` functions\"},\"features()\":{\"notice\":\"Retrieves globally set of features enabled\"},\"getImplementation()\":{\"notice\":\"Returns an address of the implementation smart contract,      see ERC1967Upgrade._getImplementation()\"},\"getRole(address)\":{\"notice\":\"Reads the permissions (role) for a given user from the `userRoles` mapping\"},\"isFeatureEnabled(uint256)\":{\"notice\":\"Checks if requested set of features is enabled globally on the contract\"},\"isOperatorInRole(address,uint256)\":{\"notice\":\"Checks if operator has all the permissions (role) required\"},\"isSenderInRole(uint256)\":{\"notice\":\"Checks if transaction sender `msg.sender` has all the permissions required\"},\"mint(address,address,uint192)\":{\"notice\":\"Bonus: a restricted access function to mint any ERC20 token\"},\"updateFeatures(uint256)\":{\"notice\":\"Updates set of the globally enabled features (`features`),      taking into account sender's permissions\"},\"updateRole(address,uint256)\":{\"notice\":\"Updates set of permissions (role) for a given user,      taking into account sender's permissions.\"},\"weiLeftInEpochForUser(address)\":{\"notice\":\"Returns the amount of ETH available for a particular user in the current epoch\"},\"weiLimitPerEpochForUser(address)\":{\"notice\":\"Returns the actual ETH limit for a particular user address,      taking into account if it is set for this particular user,      and global limit value if it is not set for the particular user\"},\"weiWithdrawnInCurrentEpoch(address)\":{\"notice\":\"Returns the amount of ETH a particular user already withdrawn in the current epoch\"},\"withdrawEth(address,uint192)\":{\"notice\":\"Restricted access function to withdraw ETH from the faucet\"}},\"notice\":\"The Faucet stores some amount of ETH allowing whitelisted      addresses to consume this ETH with a limited (throttled) speedDesigned to be used in test networks like Goerli, Mumbai, etc.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/protocol/TheFaucetV1.sol\":\"TheFaucetV1\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts-upgradeable/interfaces/IERC1967Upgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (interfaces/IERC1967.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev ERC-1967: Proxy Storage Slots. This interface contains the events defined in the ERC.\\n *\\n * _Available since v4.8.3._\\n */\\ninterface IERC1967Upgradeable {\\n    /**\\n     * @dev Emitted when the implementation is upgraded.\\n     */\\n    event Upgraded(address indexed implementation);\\n\\n    /**\\n     * @dev Emitted when the admin account has changed.\\n     */\\n    event AdminChanged(address previousAdmin, address newAdmin);\\n\\n    /**\\n     * @dev Emitted when the beacon is changed.\\n     */\\n    event BeaconUpgraded(address indexed beacon);\\n}\\n\",\"keccak256\":\"0x47d6e06872b12e72c79d1b5eb55842f860b5fb1207b2317c2358d2766b950a7b\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/interfaces/draft-IERC1822Upgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.5.0) (interfaces/draft-IERC1822.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev ERC1822: Universal Upgradeable Proxy Standard (UUPS) documents a method for upgradeability through a simplified\\n * proxy whose upgrades are fully controlled by the current implementation.\\n */\\ninterface IERC1822ProxiableUpgradeable {\\n    /**\\n     * @dev Returns the storage slot that the proxiable contract assumes is being used to store the implementation\\n     * address.\\n     *\\n     * IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks\\n     * bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this\\n     * function revert if invoked through a proxy.\\n     */\\n    function proxiableUUID() external view returns (bytes32);\\n}\\n\",\"keccak256\":\"0x77c89f893e403efc6929ba842b7ccf6534d4ffe03afe31670b4a528c0ad78c0f\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (proxy/ERC1967/ERC1967Upgrade.sol)\\n\\npragma solidity ^0.8.2;\\n\\nimport \\\"../beacon/IBeaconUpgradeable.sol\\\";\\nimport \\\"../../interfaces/IERC1967Upgradeable.sol\\\";\\nimport \\\"../../interfaces/draft-IERC1822Upgradeable.sol\\\";\\nimport \\\"../../utils/AddressUpgradeable.sol\\\";\\nimport \\\"../../utils/StorageSlotUpgradeable.sol\\\";\\nimport \\\"../utils/Initializable.sol\\\";\\n\\n/**\\n * @dev This abstract contract provides getters and event emitting update functions for\\n * https://eips.ethereum.org/EIPS/eip-1967[EIP1967] slots.\\n *\\n * _Available since v4.1._\\n */\\nabstract contract ERC1967UpgradeUpgradeable is Initializable, IERC1967Upgradeable {\\n    function __ERC1967Upgrade_init() internal onlyInitializing {\\n    }\\n\\n    function __ERC1967Upgrade_init_unchained() internal onlyInitializing {\\n    }\\n    // This is the keccak-256 hash of \\\"eip1967.proxy.rollback\\\" subtracted by 1\\n    bytes32 private constant _ROLLBACK_SLOT = 0x4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd9143;\\n\\n    /**\\n     * @dev Storage slot with the address of the current implementation.\\n     * This is the keccak-256 hash of \\\"eip1967.proxy.implementation\\\" subtracted by 1, and is\\n     * validated in the constructor.\\n     */\\n    bytes32 internal constant _IMPLEMENTATION_SLOT = 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;\\n\\n    /**\\n     * @dev Returns the current implementation address.\\n     */\\n    function _getImplementation() internal view returns (address) {\\n        return StorageSlotUpgradeable.getAddressSlot(_IMPLEMENTATION_SLOT).value;\\n    }\\n\\n    /**\\n     * @dev Stores a new address in the EIP1967 implementation slot.\\n     */\\n    function _setImplementation(address newImplementation) private {\\n        require(AddressUpgradeable.isContract(newImplementation), \\\"ERC1967: new implementation is not a contract\\\");\\n        StorageSlotUpgradeable.getAddressSlot(_IMPLEMENTATION_SLOT).value = newImplementation;\\n    }\\n\\n    /**\\n     * @dev Perform implementation upgrade\\n     *\\n     * Emits an {Upgraded} event.\\n     */\\n    function _upgradeTo(address newImplementation) internal {\\n        _setImplementation(newImplementation);\\n        emit Upgraded(newImplementation);\\n    }\\n\\n    /**\\n     * @dev Perform implementation upgrade with additional setup call.\\n     *\\n     * Emits an {Upgraded} event.\\n     */\\n    function _upgradeToAndCall(address newImplementation, bytes memory data, bool forceCall) internal {\\n        _upgradeTo(newImplementation);\\n        if (data.length > 0 || forceCall) {\\n            AddressUpgradeable.functionDelegateCall(newImplementation, data);\\n        }\\n    }\\n\\n    /**\\n     * @dev Perform implementation upgrade with security checks for UUPS proxies, and additional setup call.\\n     *\\n     * Emits an {Upgraded} event.\\n     */\\n    function _upgradeToAndCallUUPS(address newImplementation, bytes memory data, bool forceCall) internal {\\n        // Upgrades from old implementations will perform a rollback test. This test requires the new\\n        // implementation to upgrade back to the old, non-ERC1822 compliant, implementation. Removing\\n        // this special case will break upgrade paths from old UUPS implementation to new ones.\\n        if (StorageSlotUpgradeable.getBooleanSlot(_ROLLBACK_SLOT).value) {\\n            _setImplementation(newImplementation);\\n        } else {\\n            try IERC1822ProxiableUpgradeable(newImplementation).proxiableUUID() returns (bytes32 slot) {\\n                require(slot == _IMPLEMENTATION_SLOT, \\\"ERC1967Upgrade: unsupported proxiableUUID\\\");\\n            } catch {\\n                revert(\\\"ERC1967Upgrade: new implementation is not UUPS\\\");\\n            }\\n            _upgradeToAndCall(newImplementation, data, forceCall);\\n        }\\n    }\\n\\n    /**\\n     * @dev Storage slot with the admin of the contract.\\n     * This is the keccak-256 hash of \\\"eip1967.proxy.admin\\\" subtracted by 1, and is\\n     * validated in the constructor.\\n     */\\n    bytes32 internal constant _ADMIN_SLOT = 0xb53127684a568b3173ae13b9f8a6016e243e63b6e8ee1178d6a717850b5d6103;\\n\\n    /**\\n     * @dev Returns the current admin.\\n     */\\n    function _getAdmin() internal view returns (address) {\\n        return StorageSlotUpgradeable.getAddressSlot(_ADMIN_SLOT).value;\\n    }\\n\\n    /**\\n     * @dev Stores a new address in the EIP1967 admin slot.\\n     */\\n    function _setAdmin(address newAdmin) private {\\n        require(newAdmin != address(0), \\\"ERC1967: new admin is the zero address\\\");\\n        StorageSlotUpgradeable.getAddressSlot(_ADMIN_SLOT).value = newAdmin;\\n    }\\n\\n    /**\\n     * @dev Changes the admin of the proxy.\\n     *\\n     * Emits an {AdminChanged} event.\\n     */\\n    function _changeAdmin(address newAdmin) internal {\\n        emit AdminChanged(_getAdmin(), newAdmin);\\n        _setAdmin(newAdmin);\\n    }\\n\\n    /**\\n     * @dev The storage slot of the UpgradeableBeacon contract which defines the implementation for this proxy.\\n     * This is bytes32(uint256(keccak256('eip1967.proxy.beacon')) - 1)) and is validated in the constructor.\\n     */\\n    bytes32 internal constant _BEACON_SLOT = 0xa3f0ad74e5423aebfd80d3ef4346578335a9a72aeaee59ff6cb3582b35133d50;\\n\\n    /**\\n     * @dev Returns the current beacon.\\n     */\\n    function _getBeacon() internal view returns (address) {\\n        return StorageSlotUpgradeable.getAddressSlot(_BEACON_SLOT).value;\\n    }\\n\\n    /**\\n     * @dev Stores a new beacon in the EIP1967 beacon slot.\\n     */\\n    function _setBeacon(address newBeacon) private {\\n        require(AddressUpgradeable.isContract(newBeacon), \\\"ERC1967: new beacon is not a contract\\\");\\n        require(\\n            AddressUpgradeable.isContract(IBeaconUpgradeable(newBeacon).implementation()),\\n            \\\"ERC1967: beacon implementation is not a contract\\\"\\n        );\\n        StorageSlotUpgradeable.getAddressSlot(_BEACON_SLOT).value = newBeacon;\\n    }\\n\\n    /**\\n     * @dev Perform beacon upgrade with additional setup call. Note: This upgrades the address of the beacon, it does\\n     * not upgrade the implementation contained in the beacon (see {UpgradeableBeacon-_setImplementation} for that).\\n     *\\n     * Emits a {BeaconUpgraded} event.\\n     */\\n    function _upgradeBeaconToAndCall(address newBeacon, bytes memory data, bool forceCall) internal {\\n        _setBeacon(newBeacon);\\n        emit BeaconUpgraded(newBeacon);\\n        if (data.length > 0 || forceCall) {\\n            AddressUpgradeable.functionDelegateCall(IBeaconUpgradeable(newBeacon).implementation(), data);\\n        }\\n    }\\n\\n    /**\\n     * @dev This empty reserved space is put in place to allow future versions to add new\\n     * variables without shifting down storage in the inheritance chain.\\n     * See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps\\n     */\\n    uint256[50] private __gap;\\n}\\n\",\"keccak256\":\"0x584ebdf9c1118a7c773f98788e3f3ede01982bdf8932aa06f5acc7d54876e161\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/proxy/beacon/IBeaconUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (proxy/beacon/IBeacon.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev This is the interface that {BeaconProxy} expects of its beacon.\\n */\\ninterface IBeaconUpgradeable {\\n    /**\\n     * @dev Must return an address that can be used as a delegate call target.\\n     *\\n     * {BeaconProxy} will check that this address is a contract.\\n     */\\n    function implementation() external view returns (address);\\n}\\n\",\"keccak256\":\"0x24b86ac8c005b8c654fbf6ac34a5a4f61580d7273541e83e013e89d66fbf0908\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (proxy/utils/Initializable.sol)\\n\\npragma solidity ^0.8.2;\\n\\nimport \\\"../../utils/AddressUpgradeable.sol\\\";\\n\\n/**\\n * @dev This is a base contract to aid in writing upgradeable contracts, or any kind of contract that will be deployed\\n * behind a proxy. Since proxied contracts do not make use of a constructor, it's common to move constructor logic to an\\n * external initializer function, usually called `initialize`. It then becomes necessary to protect this initializer\\n * function so it can only be called once. The {initializer} modifier provided by this contract will have this effect.\\n *\\n * The initialization functions use a version number. Once a version number is used, it is consumed and cannot be\\n * reused. This mechanism prevents re-execution of each \\\"step\\\" but allows the creation of new initialization steps in\\n * case an upgrade adds a module that needs to be initialized.\\n *\\n * For example:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```solidity\\n * contract MyToken is ERC20Upgradeable {\\n *     function initialize() initializer public {\\n *         __ERC20_init(\\\"MyToken\\\", \\\"MTK\\\");\\n *     }\\n * }\\n *\\n * contract MyTokenV2 is MyToken, ERC20PermitUpgradeable {\\n *     function initializeV2() reinitializer(2) public {\\n *         __ERC20Permit_init(\\\"MyToken\\\");\\n *     }\\n * }\\n * ```\\n *\\n * TIP: To avoid leaving the proxy in an uninitialized state, the initializer function should be called as early as\\n * possible by providing the encoded function call as the `_data` argument to {ERC1967Proxy-constructor}.\\n *\\n * CAUTION: When used with inheritance, manual care must be taken to not invoke a parent initializer twice, or to ensure\\n * that all initializers are idempotent. This is not verified automatically as constructors are by Solidity.\\n *\\n * [CAUTION]\\n * ====\\n * Avoid leaving a contract uninitialized.\\n *\\n * An uninitialized contract can be taken over by an attacker. This applies to both a proxy and its implementation\\n * contract, which may impact the proxy. To prevent the implementation contract from being used, you should invoke\\n * the {_disableInitializers} function in the constructor to automatically lock it when it is deployed:\\n *\\n * [.hljs-theme-light.nopadding]\\n * ```\\n * /// @custom:oz-upgrades-unsafe-allow constructor\\n * constructor() {\\n *     _disableInitializers();\\n * }\\n * ```\\n * ====\\n */\\nabstract contract Initializable {\\n    /**\\n     * @dev Indicates that the contract has been initialized.\\n     * @custom:oz-retyped-from bool\\n     */\\n    uint8 private _initialized;\\n\\n    /**\\n     * @dev Indicates that the contract is in the process of being initialized.\\n     */\\n    bool private _initializing;\\n\\n    /**\\n     * @dev Triggered when the contract has been initialized or reinitialized.\\n     */\\n    event Initialized(uint8 version);\\n\\n    /**\\n     * @dev A modifier that defines a protected initializer function that can be invoked at most once. In its scope,\\n     * `onlyInitializing` functions can be used to initialize parent contracts.\\n     *\\n     * Similar to `reinitializer(1)`, except that functions marked with `initializer` can be nested in the context of a\\n     * constructor.\\n     *\\n     * Emits an {Initialized} event.\\n     */\\n    modifier initializer() {\\n        bool isTopLevelCall = !_initializing;\\n        require(\\n            (isTopLevelCall && _initialized < 1) || (!AddressUpgradeable.isContract(address(this)) && _initialized == 1),\\n            \\\"Initializable: contract is already initialized\\\"\\n        );\\n        _initialized = 1;\\n        if (isTopLevelCall) {\\n            _initializing = true;\\n        }\\n        _;\\n        if (isTopLevelCall) {\\n            _initializing = false;\\n            emit Initialized(1);\\n        }\\n    }\\n\\n    /**\\n     * @dev A modifier that defines a protected reinitializer function that can be invoked at most once, and only if the\\n     * contract hasn't been initialized to a greater version before. In its scope, `onlyInitializing` functions can be\\n     * used to initialize parent contracts.\\n     *\\n     * A reinitializer may be used after the original initialization step. This is essential to configure modules that\\n     * are added through upgrades and that require initialization.\\n     *\\n     * When `version` is 1, this modifier is similar to `initializer`, except that functions marked with `reinitializer`\\n     * cannot be nested. If one is invoked in the context of another, execution will revert.\\n     *\\n     * Note that versions can jump in increments greater than 1; this implies that if multiple reinitializers coexist in\\n     * a contract, executing them in the right order is up to the developer or operator.\\n     *\\n     * WARNING: setting the version to 255 will prevent any future reinitialization.\\n     *\\n     * Emits an {Initialized} event.\\n     */\\n    modifier reinitializer(uint8 version) {\\n        require(!_initializing && _initialized < version, \\\"Initializable: contract is already initialized\\\");\\n        _initialized = version;\\n        _initializing = true;\\n        _;\\n        _initializing = false;\\n        emit Initialized(version);\\n    }\\n\\n    /**\\n     * @dev Modifier to protect an initialization function so that it can only be invoked by functions with the\\n     * {initializer} and {reinitializer} modifiers, directly or indirectly.\\n     */\\n    modifier onlyInitializing() {\\n        require(_initializing, \\\"Initializable: contract is not initializing\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Locks the contract, preventing any future reinitialization. This cannot be part of an initializer call.\\n     * Calling this in the constructor of a contract will prevent that contract from being initialized or reinitialized\\n     * to any version. It is recommended to use this to lock implementation contracts that are designed to be called\\n     * through proxies.\\n     *\\n     * Emits an {Initialized} event the first time it is successfully executed.\\n     */\\n    function _disableInitializers() internal virtual {\\n        require(!_initializing, \\\"Initializable: contract is initializing\\\");\\n        if (_initialized != type(uint8).max) {\\n            _initialized = type(uint8).max;\\n            emit Initialized(type(uint8).max);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the highest version that has been initialized. See {reinitializer}.\\n     */\\n    function _getInitializedVersion() internal view returns (uint8) {\\n        return _initialized;\\n    }\\n\\n    /**\\n     * @dev Returns `true` if the contract is currently initializing. See {onlyInitializing}.\\n     */\\n    function _isInitializing() internal view returns (bool) {\\n        return _initializing;\\n    }\\n}\\n\",\"keccak256\":\"0x89be10e757d242e9b18d5a32c9fbe2019f6d63052bbe46397a430a1d60d7f794\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (proxy/utils/UUPSUpgradeable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../../interfaces/draft-IERC1822Upgradeable.sol\\\";\\nimport \\\"../ERC1967/ERC1967UpgradeUpgradeable.sol\\\";\\nimport \\\"./Initializable.sol\\\";\\n\\n/**\\n * @dev An upgradeability mechanism designed for UUPS proxies. The functions included here can perform an upgrade of an\\n * {ERC1967Proxy}, when this contract is set as the implementation behind such a proxy.\\n *\\n * A security mechanism ensures that an upgrade does not turn off upgradeability accidentally, although this risk is\\n * reinstated if the upgrade retains upgradeability but removes the security mechanism, e.g. by replacing\\n * `UUPSUpgradeable` with a custom implementation of upgrades.\\n *\\n * The {_authorizeUpgrade} function must be overridden to include access restriction to the upgrade mechanism.\\n *\\n * _Available since v4.1._\\n */\\nabstract contract UUPSUpgradeable is Initializable, IERC1822ProxiableUpgradeable, ERC1967UpgradeUpgradeable {\\n    function __UUPSUpgradeable_init() internal onlyInitializing {\\n    }\\n\\n    function __UUPSUpgradeable_init_unchained() internal onlyInitializing {\\n    }\\n    /// @custom:oz-upgrades-unsafe-allow state-variable-immutable state-variable-assignment\\n    address private immutable __self = address(this);\\n\\n    /**\\n     * @dev Check that the execution is being performed through a delegatecall call and that the execution context is\\n     * a proxy contract with an implementation (as defined in ERC1967) pointing to self. This should only be the case\\n     * for UUPS and transparent proxies that are using the current contract as their implementation. Execution of a\\n     * function through ERC1167 minimal proxies (clones) would not normally pass this test, but is not guaranteed to\\n     * fail.\\n     */\\n    modifier onlyProxy() {\\n        require(address(this) != __self, \\\"Function must be called through delegatecall\\\");\\n        require(_getImplementation() == __self, \\\"Function must be called through active proxy\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Check that the execution is not being performed through a delegate call. This allows a function to be\\n     * callable on the implementing contract but not through proxies.\\n     */\\n    modifier notDelegated() {\\n        require(address(this) == __self, \\\"UUPSUpgradeable: must not be called through delegatecall\\\");\\n        _;\\n    }\\n\\n    /**\\n     * @dev Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the\\n     * implementation. It is used to validate the implementation's compatibility when performing an upgrade.\\n     *\\n     * IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks\\n     * bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this\\n     * function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier.\\n     */\\n    function proxiableUUID() external view virtual override notDelegated returns (bytes32) {\\n        return _IMPLEMENTATION_SLOT;\\n    }\\n\\n    /**\\n     * @dev Upgrade the implementation of the proxy to `newImplementation`.\\n     *\\n     * Calls {_authorizeUpgrade}.\\n     *\\n     * Emits an {Upgraded} event.\\n     *\\n     * @custom:oz-upgrades-unsafe-allow-reachable delegatecall\\n     */\\n    function upgradeTo(address newImplementation) public virtual onlyProxy {\\n        _authorizeUpgrade(newImplementation);\\n        _upgradeToAndCallUUPS(newImplementation, new bytes(0), false);\\n    }\\n\\n    /**\\n     * @dev Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call\\n     * encoded in `data`.\\n     *\\n     * Calls {_authorizeUpgrade}.\\n     *\\n     * Emits an {Upgraded} event.\\n     *\\n     * @custom:oz-upgrades-unsafe-allow-reachable delegatecall\\n     */\\n    function upgradeToAndCall(address newImplementation, bytes memory data) public payable virtual onlyProxy {\\n        _authorizeUpgrade(newImplementation);\\n        _upgradeToAndCallUUPS(newImplementation, data, true);\\n    }\\n\\n    /**\\n     * @dev Function that should revert when `msg.sender` is not authorized to upgrade the contract. Called by\\n     * {upgradeTo} and {upgradeToAndCall}.\\n     *\\n     * Normally, this function will use an xref:access.adoc[access control] modifier such as {Ownable-onlyOwner}.\\n     *\\n     * ```solidity\\n     * function _authorizeUpgrade(address) internal override onlyOwner {}\\n     * ```\\n     */\\n    function _authorizeUpgrade(address newImplementation) internal virtual;\\n\\n    /**\\n     * @dev This empty reserved space is put in place to allow future versions to add new\\n     * variables without shifting down storage in the inheritance chain.\\n     * See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps\\n     */\\n    uint256[50] private __gap;\\n}\\n\",\"keccak256\":\"0xb607cb94c27e89750f5ae2ccebcb94e654e926f6125f4fd4c6262c89875118ad\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/AddressUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (utils/Address.sol)\\n\\npragma solidity ^0.8.1;\\n\\n/**\\n * @dev Collection of functions related to the address type\\n */\\nlibrary AddressUpgradeable {\\n    /**\\n     * @dev Returns true if `account` is a contract.\\n     *\\n     * [IMPORTANT]\\n     * ====\\n     * It is unsafe to assume that an address for which this function returns\\n     * false is an externally-owned account (EOA) and not a contract.\\n     *\\n     * Among others, `isContract` will return false for the following\\n     * types of addresses:\\n     *\\n     *  - an externally-owned account\\n     *  - a contract in construction\\n     *  - an address where a contract will be created\\n     *  - an address where a contract lived, but was destroyed\\n     *\\n     * Furthermore, `isContract` will also return true if the target contract within\\n     * the same transaction is already scheduled for destruction by `SELFDESTRUCT`,\\n     * which only has an effect at the end of a transaction.\\n     * ====\\n     *\\n     * [IMPORTANT]\\n     * ====\\n     * You shouldn't rely on `isContract` to protect against flash loan attacks!\\n     *\\n     * Preventing calls from contracts is highly discouraged. It breaks composability, breaks support for smart wallets\\n     * like Gnosis Safe, and does not provide security since it can be circumvented by calling from a contract\\n     * constructor.\\n     * ====\\n     */\\n    function isContract(address account) internal view returns (bool) {\\n        // This method relies on extcodesize/address.code.length, which returns 0\\n        // for contracts in construction, since the code is only stored at the end\\n        // of the constructor execution.\\n\\n        return account.code.length > 0;\\n    }\\n\\n    /**\\n     * @dev Replacement for Solidity's `transfer`: sends `amount` wei to\\n     * `recipient`, forwarding all available gas and reverting on errors.\\n     *\\n     * https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost\\n     * of certain opcodes, possibly making contracts go over the 2300 gas limit\\n     * imposed by `transfer`, making them unable to receive funds via\\n     * `transfer`. {sendValue} removes this limitation.\\n     *\\n     * https://consensys.net/diligence/blog/2019/09/stop-using-soliditys-transfer-now/[Learn more].\\n     *\\n     * IMPORTANT: because control is transferred to `recipient`, care must be\\n     * taken to not create reentrancy vulnerabilities. Consider using\\n     * {ReentrancyGuard} or the\\n     * https://solidity.readthedocs.io/en/v0.8.0/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].\\n     */\\n    function sendValue(address payable recipient, uint256 amount) internal {\\n        require(address(this).balance >= amount, \\\"Address: insufficient balance\\\");\\n\\n        (bool success, ) = recipient.call{value: amount}(\\\"\\\");\\n        require(success, \\\"Address: unable to send value, recipient may have reverted\\\");\\n    }\\n\\n    /**\\n     * @dev Performs a Solidity function call using a low level `call`. A\\n     * plain `call` is an unsafe replacement for a function call: use this\\n     * function instead.\\n     *\\n     * If `target` reverts with a revert reason, it is bubbled up by this\\n     * function (like regular Solidity function calls).\\n     *\\n     * Returns the raw returned data. To convert to the expected return value,\\n     * use https://solidity.readthedocs.io/en/latest/units-and-global-variables.html?highlight=abi.decode#abi-encoding-and-decoding-functions[`abi.decode`].\\n     *\\n     * Requirements:\\n     *\\n     * - `target` must be a contract.\\n     * - calling `target` with `data` must not revert.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(address target, bytes memory data) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, 0, \\\"Address: low-level call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`], but with\\n     * `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, 0, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but also transferring `value` wei to `target`.\\n     *\\n     * Requirements:\\n     *\\n     * - the calling contract must have an ETH balance of at least `value`.\\n     * - the called Solidity function must be `payable`.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(address target, bytes memory data, uint256 value) internal returns (bytes memory) {\\n        return functionCallWithValue(target, data, value, \\\"Address: low-level call with value failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCallWithValue-address-bytes-uint256-}[`functionCallWithValue`], but\\n     * with `errorMessage` as a fallback revert reason when `target` reverts.\\n     *\\n     * _Available since v3.1._\\n     */\\n    function functionCallWithValue(\\n        address target,\\n        bytes memory data,\\n        uint256 value,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        require(address(this).balance >= value, \\\"Address: insufficient balance for call\\\");\\n        (bool success, bytes memory returndata) = target.call{value: value}(data);\\n        return verifyCallResultFromTarget(target, success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {\\n        return functionStaticCall(target, data, \\\"Address: low-level static call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],\\n     * but performing a static call.\\n     *\\n     * _Available since v3.3._\\n     */\\n    function functionStaticCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal view returns (bytes memory) {\\n        (bool success, bytes memory returndata) = target.staticcall(data);\\n        return verifyCallResultFromTarget(target, success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\\n     * but performing a delegate call.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function functionDelegateCall(address target, bytes memory data) internal returns (bytes memory) {\\n        return functionDelegateCall(target, data, \\\"Address: low-level delegate call failed\\\");\\n    }\\n\\n    /**\\n     * @dev Same as {xref-Address-functionCall-address-bytes-string-}[`functionCall`],\\n     * but performing a delegate call.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function functionDelegateCall(\\n        address target,\\n        bytes memory data,\\n        string memory errorMessage\\n    ) internal returns (bytes memory) {\\n        (bool success, bytes memory returndata) = target.delegatecall(data);\\n        return verifyCallResultFromTarget(target, success, returndata, errorMessage);\\n    }\\n\\n    /**\\n     * @dev Tool to verify that a low level call to smart-contract was successful, and revert (either by bubbling\\n     * the revert reason or using the provided one) in case of unsuccessful call or if target was not a contract.\\n     *\\n     * _Available since v4.8._\\n     */\\n    function verifyCallResultFromTarget(\\n        address target,\\n        bool success,\\n        bytes memory returndata,\\n        string memory errorMessage\\n    ) internal view returns (bytes memory) {\\n        if (success) {\\n            if (returndata.length == 0) {\\n                // only check isContract if the call was successful and the return data is empty\\n                // otherwise we already know that it was a contract\\n                require(isContract(target), \\\"Address: call to non-contract\\\");\\n            }\\n            return returndata;\\n        } else {\\n            _revert(returndata, errorMessage);\\n        }\\n    }\\n\\n    /**\\n     * @dev Tool to verify that a low level call was successful, and revert if it wasn't, either by bubbling the\\n     * revert reason or using the provided one.\\n     *\\n     * _Available since v4.3._\\n     */\\n    function verifyCallResult(\\n        bool success,\\n        bytes memory returndata,\\n        string memory errorMessage\\n    ) internal pure returns (bytes memory) {\\n        if (success) {\\n            return returndata;\\n        } else {\\n            _revert(returndata, errorMessage);\\n        }\\n    }\\n\\n    function _revert(bytes memory returndata, string memory errorMessage) private pure {\\n        // Look for revert reason and bubble it up if present\\n        if (returndata.length > 0) {\\n            // The easiest way to bubble the revert reason is using memory via assembly\\n            /// @solidity memory-safe-assembly\\n            assembly {\\n                let returndata_size := mload(returndata)\\n                revert(add(32, returndata), returndata_size)\\n            }\\n        } else {\\n            revert(errorMessage);\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x9c80f545915582e63fe206c6ce27cbe85a86fc10b9cd2a0e8c9488fb7c2ee422\",\"license\":\"MIT\"},\"@openzeppelin/contracts-upgradeable/utils/StorageSlotUpgradeable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (utils/StorageSlot.sol)\\n// This file was procedurally generated from scripts/generate/templates/StorageSlot.js.\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Library for reading and writing primitive types to specific storage slots.\\n *\\n * Storage slots are often used to avoid storage conflict when dealing with upgradeable contracts.\\n * This library helps with reading and writing to such slots without the need for inline assembly.\\n *\\n * The functions in this library return Slot structs that contain a `value` member that can be used to read or write.\\n *\\n * Example usage to set ERC1967 implementation slot:\\n * ```solidity\\n * contract ERC1967 {\\n *     bytes32 internal constant _IMPLEMENTATION_SLOT = 0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;\\n *\\n *     function _getImplementation() internal view returns (address) {\\n *         return StorageSlot.getAddressSlot(_IMPLEMENTATION_SLOT).value;\\n *     }\\n *\\n *     function _setImplementation(address newImplementation) internal {\\n *         require(Address.isContract(newImplementation), \\\"ERC1967: new implementation is not a contract\\\");\\n *         StorageSlot.getAddressSlot(_IMPLEMENTATION_SLOT).value = newImplementation;\\n *     }\\n * }\\n * ```\\n *\\n * _Available since v4.1 for `address`, `bool`, `bytes32`, `uint256`._\\n * _Available since v4.9 for `string`, `bytes`._\\n */\\nlibrary StorageSlotUpgradeable {\\n    struct AddressSlot {\\n        address value;\\n    }\\n\\n    struct BooleanSlot {\\n        bool value;\\n    }\\n\\n    struct Bytes32Slot {\\n        bytes32 value;\\n    }\\n\\n    struct Uint256Slot {\\n        uint256 value;\\n    }\\n\\n    struct StringSlot {\\n        string value;\\n    }\\n\\n    struct BytesSlot {\\n        bytes value;\\n    }\\n\\n    /**\\n     * @dev Returns an `AddressSlot` with member `value` located at `slot`.\\n     */\\n    function getAddressSlot(bytes32 slot) internal pure returns (AddressSlot storage r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            r.slot := slot\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns an `BooleanSlot` with member `value` located at `slot`.\\n     */\\n    function getBooleanSlot(bytes32 slot) internal pure returns (BooleanSlot storage r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            r.slot := slot\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns an `Bytes32Slot` with member `value` located at `slot`.\\n     */\\n    function getBytes32Slot(bytes32 slot) internal pure returns (Bytes32Slot storage r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            r.slot := slot\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns an `Uint256Slot` with member `value` located at `slot`.\\n     */\\n    function getUint256Slot(bytes32 slot) internal pure returns (Uint256Slot storage r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            r.slot := slot\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns an `StringSlot` with member `value` located at `slot`.\\n     */\\n    function getStringSlot(bytes32 slot) internal pure returns (StringSlot storage r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            r.slot := slot\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns an `StringSlot` representation of the string storage pointer `store`.\\n     */\\n    function getStringSlot(string storage store) internal pure returns (StringSlot storage r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            r.slot := store.slot\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns an `BytesSlot` with member `value` located at `slot`.\\n     */\\n    function getBytesSlot(bytes32 slot) internal pure returns (BytesSlot storage r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            r.slot := slot\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns an `BytesSlot` representation of the bytes storage pointer `store`.\\n     */\\n    function getBytesSlot(bytes storage store) internal pure returns (BytesSlot storage r) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            r.slot := store.slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x07ac95acad040f1fb1f6120dd0aa5f702db69446e95f82613721879d30de0908\",\"license\":\"MIT\"},\"contracts/protocol/TheFaucetV1.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.4;\\n\\nimport \\\"../utils/UpgradeableAccessControl.sol\\\";\\n\\n/**\\n * @title The Faucet\\n *\\n * @notice The Faucet stores some amount of ETH allowing whitelisted\\n *      addresses to consume this ETH with a limited (throttled) speed\\n *\\n * @notice Designed to be used in test networks like Goerli, Mumbai, etc.\\n *\\n * @dev In order to get ETH, an account must have `ROLE_FAUCET_USER` permission\\n *\\n * @dev `ROLE_FAUCET_MANAGER` can set ETH withdrawal limits for the faucet users\\n *\\n * @author Basil Gorin\\n */\\ncontract TheFaucetV1 is UpgradeableAccessControl {\\n\\t/**\\n\\t * @dev We divide the time into the epochs of equal size, and make sure\\n\\t *      that no user exceeds the ETH limit set for one epoch\\n\\t *\\n\\t * @dev The epoch length (size) is configurable, but we expect it to be equal\\n\\t *      to 24h in most cases (the default value)\\n\\t *\\n\\t * @dev Epoch length can be updated by the faucet manager `ROLE_FAUCET_MANAGER`\\n\\t *\\n\\t * @dev Epoch length is measured in seconds\\n\\t */\\n\\tuint64 public epochLength; // 1 day\\n\\n\\t/**\\n\\t * @dev Global ETH limit per epoch defines how much ETH it is allowed\\n\\t *      to be consumed by the user address in one epoch\\n\\t *\\n\\t * @dev This value can have a per user override, set by the faucet manager `ROLE_FAUCET_MANAGER`\\n\\t *\\n\\t * @dev ETH limit per epoch can be updated by the faucet manager `ROLE_FAUCET_MANAGER`\\n\\t *\\n\\t * @dev ETH limit per epoch is measured in wei\\n\\t */\\n\\tuint192 public weiLimitPerEpoch; // 10 ether\\n\\n\\t/**\\n\\t * @dev Overrides global ETH limit for a user address\\n\\t *\\n\\t * @dev Zero values (non set values) are ignored and\\n\\t *      global ETH limit per epoch (`weiLimitPerEpoch`) is used\\n\\t *\\n\\t * @dev Maps `user address => wei limit per epoch (override)`\\n\\t */\\n\\tmapping(address => uint192) public weiLimitPerEpochOverrides;\\n\\n\\t/**\\n\\t * @dev Core data structure enabling the throttling mechanism support,\\n\\t *      used in the `user address -> WithdrawalStat struct` mapping\\n\\t *\\n\\t * @dev Records how much wei user address has withdrawn in current epoch,\\n\\t *      and the timestamp of the last withdrawal\\n\\t *\\n\\t * @dev En epoch is a time interval\\n\\t */\\n\\tstruct WithdrawalStat {\\n\\t\\t/**\\n\\t\\t * @dev When user address has withdrawn last time,\\n\\t\\t *      unix timestamp\\n\\t\\t */\\n\\t\\tuint64 lastWithdrawalTimestamp;\\n\\n\\t\\t/**\\n\\t\\t * @dev How much user address has withdrawn during the current epoch,\\n\\t\\t *      an amount in wei\\n\\t\\t */\\n\\t\\tuint192 weiWithdrawn;\\n\\t}\\n\\n\\t/**\\n\\t * @dev Keeps track of recent withdrawals to enable ETH supply throttling\\n\\t *\\n\\t * @dev Each time the user makes a withdrawal the record is being either\\n\\t *      - created (if record doesn't yet exist)\\n\\t *      - overwritten (if record is old, i.e. belong to the past epoch)\\n\\t *      - cumulatively added (if record is recent, i.e. belongs to the current epoch)\\n\\t *\\n\\t * @dev Maps `user address -> WithdrawalStat struct`\\n\\t */\\n\\tmapping(address => WithdrawalStat) public withdrawalStats;\\n\\n\\t/**\\n\\t * @dev Grants permission to withdraw ETH (throttled)\\n\\t *\\n\\t * @dev Faucet user is allowed to get ETH via the faucet\\n\\t *\\n\\t * @dev `ROLE_FAUCET_USER` is required to execute:\\n\\t *      `withdrawEth`, `mint`\\n\\t */\\n\\tuint256 public constant ROLE_FAUCET_USER = 0x0001_0000;\\n\\n\\t/**\\n\\t * @dev Grants permission to change throttling settings:\\n\\t *      `epochLength`, `weiLimitPerEpoch`, `weiLimitPerEpochOverrides`\\n\\t *\\n\\t * @dev Faucet manager is responsible for faucet configuration and managing\\n\\t *      faucet users\\n\\t *\\n\\t * @dev `ROLE_FAUCET_MANAGER` is required to execute:\\n\\t *      `setEpochParams`, `setWeiLimitPerEpochForUser`\\n\\t */\\n\\tuint256 public constant ROLE_FAUCET_MANAGER = 0x0002_0000;\\n\\n\\t/**\\n\\t * @dev Fired in `setEpochParams`\\n\\t *\\n\\t * @param epochLength new epoch length, seconds\\n\\t * @param weiLimitPerEpoch new ETH limit per epoch, wei\\n\\t */\\n\\tevent EpochParamsUpdated(uint64 epochLength, uint192 weiLimitPerEpoch);\\n\\n\\t/**\\n\\t * @dev Fired in `setWeiLimitPerEpochForUser`\\n\\t *\\n\\t * @param userAddress user address to update the wei limit for\\n\\t * @param weiLimitPerEpoch new ETH limit per epoch for user, wei\\n\\t */\\n\\tevent WeiLimitUpdated(address indexed userAddress, uint192 weiLimitPerEpoch);\\n\\n\\t/**\\n\\t * @dev Fired in `withdrawEth`\\n\\t *\\n\\t * @param to an address to send ETH to\\n\\t * @param value amount of ETH to send, wei\\n\\t */\\n\\tevent ETHWithdrawn(address indexed to, uint192 value);\\n\\n\\t/**\\n\\t * @dev Fired in `mint`\\n\\t *\\n\\t * @param target target smart contract address to invoke function call on\\n\\t * @param to an address to mint tokens to\\n\\t * @param value amount of tokens to mint, wei\\n\\t */\\n\\tevent MintProxied(address indexed target, address indexed to, uint192 value);\\n\\n\\t/**\\n\\t * @dev \\\"Constructor replacement\\\" for upgradeable, must be execute immediately after deployment\\n\\t *      see https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#initializers\\n\\t */\\n\\tfunction postConstruct() public initializer {\\n\\t\\t// execute parent initializer\\n\\t\\t_postConstruct(msg.sender);\\n\\n\\t\\t// initialize own internal state\\n\\t\\tsetEpochParams(1 days, 10 ether);\\n\\t}\\n\\n\\t/**\\n\\t * @notice Returns the actual ETH limit for a particular user address,\\n\\t *      taking into account if it is set for this particular user,\\n\\t *      and global limit value if it is not set for the particular user\\n\\t *\\n\\t * @param _userAddress user address to check the actual ETH limit for\\n\\t * @return ETH limit for a user address, wei\\n\\t */\\n\\tfunction weiLimitPerEpochForUser(address _userAddress) public view returns(uint192) {\\n\\t\\t// read the overrides value (if it set)\\n\\t\\tuint192 overridden = weiLimitPerEpochOverrides[_userAddress];\\n\\n\\t\\t// depending if overrides value is set or no, return the overridden one or global one\\n\\t\\treturn overridden != 0? overridden: weiLimitPerEpoch;\\n\\t}\\n\\n\\t/**\\n\\t * @notice Returns the amount of ETH a particular user already withdrawn in the current epoch\\n\\t *\\n\\t * @param _userAddress user address to check the withdrawn ETH for\\n\\t * @return ETH withdrawn in current epoch by the user address, wei\\n\\t */\\n\\tfunction weiWithdrawnInCurrentEpoch(address _userAddress) public view returns(uint192) {\\n\\t\\t// read the withdrawal stats storage slot into memory\\n\\t\\tWithdrawalStat memory userStat = withdrawalStats[_userAddress];\\n\\n\\t\\t// compare last withdrawal epoch number and current epoch number\\n\\t\\t// if last withdrawal epoch is in the past\\n\\t\\tif(userStat.lastWithdrawalTimestamp / epochLength < block.timestamp / epochLength) {\\n\\t\\t\\t// we didn't withdraw anything in current epoch, return zero\\n\\t\\t\\treturn 0;\\n\\t\\t}\\n\\t\\t// if last withdrawal epoch is the current one\\n\\t\\telse {\\n\\t\\t\\t// return the stored wei value\\n\\t\\t\\treturn userStat.weiWithdrawn;\\n\\t\\t}\\n\\t}\\n\\n\\t/**\\n\\t * @notice Returns the amount of ETH available for a particular user in the current epoch\\n\\t *\\n\\t * @param _userAddress user address to check amount of ETH available for\\n\\t * @return available ETH for a user address available in current epoch\\n\\t */\\n\\tfunction weiLeftInEpochForUser(address _userAddress) public view returns(uint192) {\\n\\t\\t// calculate based on the aux functions we have and return\\n\\t\\treturn weiLimitPerEpochForUser(_userAddress) - weiWithdrawnInCurrentEpoch(_userAddress);\\n\\t}\\n\\n\\t/**\\n\\t * @dev Restricted access function to update global throttling params,\\n\\t *      updates `epochLength` and `weiLimitPerEpoch` global params\\n\\t *\\n\\t * @param _epochLength new epoch length, seconds, required\\n\\t * @param _weiLimitPerEpoch new ETH limit per epoch, wei\\n\\t */\\n\\tfunction setEpochParams(uint64 _epochLength, uint192 _weiLimitPerEpoch) public {\\n\\t\\t// verify the access permission\\n\\t\\trequire(isSenderInRole(ROLE_FAUCET_MANAGER), \\\"access denied\\\");\\n\\n\\t\\t// verify epoch length is set\\n\\t\\trequire(_epochLength != 0, \\\"epoch length not set\\\");\\n\\n\\t\\t// update the params\\n\\t\\tepochLength = _epochLength;\\n\\t\\tweiLimitPerEpoch = _weiLimitPerEpoch;\\n\\n\\t\\t// emit an event\\n\\t\\temit EpochParamsUpdated(_epochLength, _weiLimitPerEpoch);\\n\\t}\\n\\n\\t/**\\n\\t * @dev Restricted access function to update throttling params for a user,\\n\\t *      updates `weiLimitPerEpochOverrides` param for a particular user\\n\\t *\\n\\t * @param _userAddress user address to update the wei limit for, required\\n\\t * @param _weiLimitPerEpoch new ETH limit per epoch for user, wei\\n\\t */\\n\\tfunction setWeiLimitPerEpochForUser(address _userAddress, uint192 _weiLimitPerEpoch) public {\\n\\t\\t// verify the access permission\\n\\t\\trequire(isSenderInRole(ROLE_FAUCET_MANAGER), \\\"access denied\\\");\\n\\n\\t\\t// verify user address is set\\n\\t\\trequire(_userAddress != address(0), \\\"user address not set\\\");\\n\\n\\t\\t// update the params\\n\\t\\tweiLimitPerEpochOverrides[_userAddress] = _weiLimitPerEpoch;\\n\\n\\t\\t// emit an event\\n\\t\\temit WeiLimitUpdated(_userAddress, _weiLimitPerEpoch);\\n\\t}\\n\\n\\t/**\\n\\t * @notice Restricted access function to withdraw ETH from the faucet\\n\\t *\\n\\t * @param to an address to send ETH to, required\\n\\t * @param value amount of ETH to send, wei, required\\n\\t */\\n\\tfunction withdrawEth(address payable to, uint192 value) public {\\n\\t\\t// verify the access permission\\n\\t\\trequire(isSenderInRole(ROLE_FAUCET_USER), \\\"access denied\\\");\\n\\n\\t\\t// verify the inputs\\n\\t\\trequire(to != address(0), \\\"recipient not set\\\");\\n\\t\\trequire(value != 0, \\\"value not set\\\");\\n\\n\\t\\t// determine how much ETH user is allowed to withdraw in current epoch\\n\\t\\tuint192 allowance = weiLeftInEpochForUser(msg.sender);\\n\\n\\t\\t// verify the request doesn't exceed the allowance\\n\\t\\trequire(value <= allowance, \\\"allowance exceeded\\\");\\n\\n\\t\\t// verify the request doesn't exceed faucet balance\\n\\t\\trequire(value <= address(this).balance, \\\"balance exceeded\\\");\\n\\n\\t\\t// get a link to the user withdrawal stat\\n\\t\\tWithdrawalStat storage userStat = withdrawalStats[msg.sender];\\n\\n\\t\\t// update user withdrawal stat:\\n\\t\\t// if user stat doesn't exist or is too old (updated in the previous epoch)\\n\\t\\tif(userStat.lastWithdrawalTimestamp / epochLength < block.timestamp / epochLength) {\\n\\t\\t\\t// overwrite it\\n\\t\\t\\tuserStat.weiWithdrawn = value;\\n\\t\\t}\\n\\t\\t// if user stat is fresh (updated in the current epoch)\\n\\t\\telse {\\n\\t\\t\\t// merge it\\n\\t\\t\\tuserStat.weiWithdrawn += value;\\n\\t\\t}\\n\\n\\t\\t// update the last withdrawal timestamp\\n\\t\\tuserStat.lastWithdrawalTimestamp = uint64(block.timestamp);\\n\\n\\t\\t// send the ETH to the destination requested\\n\\t\\tto.transfer(value);\\n\\n\\t\\t// emit an event\\n\\t\\temit ETHWithdrawn(to, value);\\n\\t}\\n\\n\\t/**\\n\\t * @notice Bonus: a restricted access function to mint any ERC20 token\\n\\t *\\n\\t * @dev Proxies the request as `target.mint(to, value)`, and can be used\\n\\t *      to mint any \\\"mintable\\\" entity, that is having the `mint(address,uint256)`\\n\\t *      function available\\n\\t *\\n\\t * @dev Implicitly limits the value to the 192-bits space, effectively protecting\\n\\t *      target token contract from integer overflow\\n\\t *\\n\\t * @dev Requires executor to have `ROLE_FAUCET_USER` permission\\n\\t * @dev Requires Faucet to have the permission to execute `mint` function on the\\n\\t *      target contract (don't forget to setup it)\\n\\t *\\n\\t * @param target target smart contract address to invoke function call on, required\\n\\t * @param to an address to mint tokens to, required\\n\\t * @param value amount of tokens to mint, wei, required\\n\\t */\\n\\tfunction mint(address target, address to, uint192 value) public {\\n\\t\\t// verify the access permission\\n\\t\\trequire(isSenderInRole(ROLE_FAUCET_USER), \\\"access denied\\\");\\n\\n\\t\\t// verify the inputs\\n\\t\\trequire(target != address(0), \\\"target contract not set\\\");\\n\\t\\trequire(to != address(0), \\\"recipient not set\\\");\\n\\t\\trequire(value != 0, \\\"value not set\\\");\\n\\n\\t\\t// prepare the mint payload for a low-level function call\\n\\t\\tbytes memory payload = abi.encodeWithSignature(\\\"mint(address,uint256)\\\", to, value);\\n\\n\\t\\t// execute the low-level function call\\n\\t\\t(bool success, ) = target.call{gas: 81_000}(payload);\\n\\n\\t\\t// verify the result, throw on error\\n\\t\\trequire(success, \\\"low-level function call failed\\\");\\n\\n\\t\\t// emit an event\\n\\t\\temit MintProxied(target, to, value);\\n\\t}\\n\\n\\t/**\\n\\t * @dev Restricted access function to add faucet users in bulk mode\\n\\t *\\n\\t * @param users user addresses to add\\n\\t */\\n\\tfunction addUsers(address[] calldata users) public {\\n\\t\\t// verify the access permission\\n\\t\\trequire(isSenderInRole(ROLE_FAUCET_MANAGER), \\\"access denied\\\");\\n\\n\\t\\t// verify the input array is set\\n\\t\\trequire(users.length != 0, \\\"empty users array\\\");\\n\\n\\t\\t// process each user address individually\\n\\t\\tfor(uint256 i = 0; i < users.length; i++) {\\n\\t\\t\\t// and share `ROLE_FAUCET_USER` with it\\n\\t\\t\\t// calculate the role\\n\\t\\t\\tuint256 role = getRole(users[i]) | ROLE_FAUCET_USER;\\n\\t\\t\\t// set the calculated role\\n\\t\\t\\t// execute via external call in order to use contract's self-permissions\\n\\t\\t\\tthis.updateRole(users[i], role);\\n\\t\\t}\\n\\t}\\n\\n\\t/**\\n\\t * @dev Restricted access function to remove faucet users in bulk mode\\n\\t *\\n\\t * @param users user addresses to remove\\n\\t */\\n\\tfunction removeUsers(address[] calldata users) public {\\n\\t\\t// verify the access permission\\n\\t\\trequire(isSenderInRole(ROLE_FAUCET_MANAGER), \\\"access denied\\\");\\n\\n\\t\\t// verify the input array is set\\n\\t\\trequire(users.length != 0, \\\"empty users array\\\");\\n\\n\\t\\t// process each user address individually\\n\\t\\tfor(uint256 i = 0; i < users.length; i++) {\\n\\t\\t\\t// and remove `ROLE_FAUCET_USER` from it\\n\\t\\t\\t// calculate the role\\n\\t\\t\\tuint256 role = getRole(users[i]) ^ ROLE_FAUCET_USER;\\n\\t\\t\\t// set the calculated role\\n\\t\\t\\t// execute via external call in order to use contract's self-permissions\\n\\t\\t\\tthis.updateRole(users[i], role);\\n\\t\\t}\\n\\t}\\n\\n\\t/**\\n\\t * @dev Allow our dear valued users to send their ETH back\\n\\t */\\n\\treceive() external payable {}\\n}\\n\",\"keccak256\":\"0x9ce9a3b578bebe54887bfc934b839ac434a516d6f313be089f4e2a8c55c456b5\",\"license\":\"MIT\"},\"contracts/utils/UpgradeableAccessControl.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.4;\\n\\nimport \\\"@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol\\\";\\n\\n/**\\n * @title Initializable Access Control List // ERC1967Proxy\\n *\\n * @notice Access control smart contract provides an API to check\\n *      if a specific operation is permitted globally and/or\\n *      if a particular user has a permission to execute it.\\n *\\n * @notice It deals with two main entities: features and roles.\\n *\\n * @notice Features are designed to be used to enable/disable public functions\\n *      of the smart contract (used by a wide audience).\\n * @notice User roles are designed to control the access to restricted functions\\n *      of the smart contract (used by a limited set of maintainers).\\n *\\n * @notice Terms \\\"role\\\", \\\"permissions\\\" and \\\"set of permissions\\\" have equal meaning\\n *      in the documentation text and may be used interchangeably.\\n * @notice Terms \\\"permission\\\", \\\"single permission\\\" implies only one permission bit set.\\n *\\n * @notice Access manager is a special role which allows to grant/revoke other roles.\\n *      Access managers can only grant/revoke permissions which they have themselves.\\n *      As an example, access manager with no other roles set can only grant/revoke its own\\n *      access manager permission and nothing else.\\n *\\n * @notice Access manager permission should be treated carefully, as a super admin permission:\\n *      Access manager with even no other permission can interfere with another account by\\n *      granting own access manager permission to it and effectively creating more powerful\\n *      permission set than its own.\\n *\\n * @dev Both current and OpenZeppelin AccessControl implementations feature a similar API\\n *      to check/know \\\"who is allowed to do this thing\\\".\\n * @dev Zeppelin implementation is more flexible:\\n *      - it allows setting unlimited number of roles, while current is limited to 256 different roles\\n *      - it allows setting an admin for each role, while current allows having only one global admin\\n * @dev Current implementation is more lightweight:\\n *      - it uses only 1 bit per role, while Zeppelin uses 256 bits\\n *      - it allows setting up to 256 roles at once, in a single transaction, while Zeppelin allows\\n *        setting only one role in a single transaction\\n *\\n * @dev This smart contract is designed to be inherited by other\\n *      smart contracts which require access control management capabilities.\\n *\\n * @dev Access manager permission has a bit 255 set.\\n *      This bit must not be used by inheriting contracts for any other permissions/features.\\n *\\n * @dev This is an initializable version of the ACL, based on Zeppelin implementation,\\n *      it can be used for ERC1967 proxies, as well as for EIP-1167 minimal proxies\\n *      see https://docs.openzeppelin.com/contracts/4.x/upgradeable\\n *      see https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable\\n *      see https://forum.openzeppelin.com/t/uups-proxies-tutorial-solidity-javascript/7786\\n *      see https://eips.ethereum.org/EIPS/eip-1167\\n *      see https://docs.openzeppelin.com/contracts/4.x/api/proxy#Clones\\n *\\n * @author Basil Gorin\\n */\\nabstract contract InitializableAccessControl is Initializable {\\n\\t/**\\n\\t * @notice Privileged addresses with defined roles/permissions\\n\\t * @notice In the context of ERC20/ERC721 tokens these can be permissions to\\n\\t *      allow minting or burning tokens, transferring on behalf and so on\\n\\t *\\n\\t * @dev Maps user address to the permissions bitmask (role), where each bit\\n\\t *      represents a permission\\n\\t * @dev Bitmask 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\\n\\t *      represents all possible permissions\\n\\t * @dev 'This' address mapping represents global features of the smart contract\\n\\t *\\n\\t * @dev We keep the mapping private to prevent direct writes to it from the inheriting\\n\\t *      contracts, `getRole()` and `updateRole()` functions should be used instead\\n\\t */\\n\\tmapping(address => uint256) private userRoles;\\n\\n\\t/**\\n\\t * @dev Empty reserved space in storage. The size of the __gap array is calculated so that\\n\\t *      the amount of storage used by a contract always adds up to the 50.\\n\\t *      See https://docs.openzeppelin.com/contracts/4.x/upgradeable#storage_gaps\\n\\t */\\n\\tuint256[49] private __gap;\\n\\n\\t/**\\n\\t * @notice Access manager is responsible for assigning the roles to users,\\n\\t *      enabling/disabling global features of the smart contract\\n\\t * @notice Access manager can add, remove and update user roles,\\n\\t *      remove and update global features\\n\\t *\\n\\t * @dev Role ROLE_ACCESS_MANAGER allows modifying user roles and global features\\n\\t * @dev Role ROLE_ACCESS_MANAGER has single bit at position 255 enabled\\n\\t */\\n\\tuint256 public constant ROLE_ACCESS_MANAGER = 0x8000000000000000000000000000000000000000000000000000000000000000;\\n\\n\\t/**\\n\\t * @notice Upgrade manager is responsible for smart contract upgrades,\\n\\t *      see https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable\\n\\t *      see https://docs.openzeppelin.com/contracts/4.x/upgradeable\\n\\t *\\n\\t * @dev Role ROLE_UPGRADE_MANAGER allows passing the _authorizeUpgrade() check\\n\\t * @dev Role ROLE_UPGRADE_MANAGER has single bit at position 254 enabled\\n\\t */\\n\\tuint256 public constant ROLE_UPGRADE_MANAGER = 0x4000000000000000000000000000000000000000000000000000000000000000;\\n\\n\\t/**\\n\\t * @dev Bitmask representing all the possible permissions (super admin role)\\n\\t * @dev Has all the bits are enabled (2^256 - 1 value)\\n\\t */\\n\\tuint256 private constant FULL_PRIVILEGES_MASK = type(uint256).max; // before 0.8.0: uint256(-1) overflows to 0xFFFF...\\n\\n\\t/**\\n\\t * @dev Fired in updateRole() and updateFeatures()\\n\\t *\\n\\t * @param _by operator which called the function\\n\\t * @param _to address which was granted/revoked permissions\\n\\t * @param _requested permissions requested\\n\\t * @param _assigned permissions effectively set\\n\\t */\\n\\tevent RoleUpdated(address indexed _by, address indexed _to, uint256 _requested, uint256 _assigned);\\n\\n\\t/**\\n\\t * @dev Creates/deploys the ACL implementation to be used in a proxy\\n\\t *\\n\\t * @dev Note:\\n\\t *      the implementation is already initialized and\\n\\t *      `_postConstruct` is not executable on the implementation\\n\\t *      `_postConstruct` is still available in the context of a proxy\\n\\t *      and should be executed on the proxy deployment (in the same tx)\\n\\t */\\n\\tconstructor() initializer {}\\n\\n\\t/**\\n\\t * @dev Contract initializer, sets the contract owner to have full privileges\\n\\t *\\n\\t * @dev Can be executed only once, reverts when executed second time\\n\\t *\\n\\t * @dev IMPORTANT:\\n\\t *      this function SHOULD be executed during proxy deployment (in the same transaction)\\n\\t *\\n\\t * @param _owner smart contract owner having full privileges\\n\\t */\\n\\tfunction _postConstruct(address _owner) internal virtual initializer {\\n\\t\\t// grant owner full privileges\\n\\t\\t__setRole(_owner, FULL_PRIVILEGES_MASK, FULL_PRIVILEGES_MASK);\\n\\t}\\n\\n\\t/**\\n\\t * @dev Highest version that has been initialized.\\n\\t *      Non-zero value means contract was already initialized.\\n\\t * @dev see {Initializable}, {reinitializer}.\\n\\t *\\n\\t * @return highest version that has been initialized\\n\\t */\\n\\tfunction getInitializedVersion() public view returns(uint8) {\\n\\t\\t// delegate to `_getInitializedVersion`\\n\\t\\treturn _getInitializedVersion();\\n\\t}\\n\\n\\t/**\\n\\t * @notice Retrieves globally set of features enabled\\n\\t *\\n\\t * @dev Effectively reads userRoles role for the contract itself\\n\\t *\\n\\t * @return 256-bit bitmask of the features enabled\\n\\t */\\n\\tfunction features() public view returns (uint256) {\\n\\t\\t// features are stored in 'this' address mapping of `userRoles`\\n\\t\\treturn getRole(address(this));\\n\\t}\\n\\n\\t/**\\n\\t * @notice Updates set of the globally enabled features (`features`),\\n\\t *      taking into account sender's permissions\\n\\t *\\n\\t * @dev Requires transaction sender to have `ROLE_ACCESS_MANAGER` permission\\n\\t * @dev Function is left for backward compatibility with older versions\\n\\t *\\n\\t * @param _mask bitmask representing a set of features to enable/disable\\n\\t */\\n\\tfunction updateFeatures(uint256 _mask) public {\\n\\t\\t// delegate call to `updateRole`\\n\\t\\tupdateRole(address(this), _mask);\\n\\t}\\n\\n\\t/**\\n\\t * @notice Reads the permissions (role) for a given user from the `userRoles` mapping\\n\\t *\\n\\t * @dev Having a simple getter instead of making the mapping public\\n\\t *      allows enforcing the encapsulation of the mapping and protects from\\n\\t *      writing to it directly in the inheriting smart contracts\\n\\t *\\n\\t * @param operator address of a user to read permissions for,\\n\\t *      or self address to read global features of the smart contract\\n\\t */\\n\\tfunction getRole(address operator) public view returns(uint256) {\\n\\t\\t// read the value from `userRoles` and return\\n\\t\\treturn userRoles[operator];\\n\\t}\\n\\n\\t/**\\n\\t * @notice Updates set of permissions (role) for a given user,\\n\\t *      taking into account sender's permissions.\\n\\t *\\n\\t * @dev Setting role to zero is equivalent to removing an all permissions\\n\\t * @dev Setting role to `FULL_PRIVILEGES_MASK` is equivalent to\\n\\t *      copying senders' permissions (role) to the user\\n\\t * @dev Requires transaction sender to have `ROLE_ACCESS_MANAGER` permission\\n\\t *\\n\\t * @param operator address of a user to alter permissions for,\\n\\t *       or self address to alter global features of the smart contract\\n\\t * @param role bitmask representing a set of permissions to\\n\\t *      enable/disable for a user specified\\n\\t */\\n\\tfunction updateRole(address operator, uint256 role) public {\\n\\t\\t// caller must have a permission to update user roles\\n\\t\\trequire(isSenderInRole(ROLE_ACCESS_MANAGER), \\\"access denied\\\");\\n\\n\\t\\t// evaluate the role and reassign it\\n\\t\\t__setRole(operator, role, evaluateBy(msg.sender, getRole(operator), role));\\n\\t}\\n\\n\\t/**\\n\\t * @notice Determines the permission bitmask an operator can set on the\\n\\t *      target permission set\\n\\t * @notice Used to calculate the permission bitmask to be set when requested\\n\\t *     in `updateRole` and `updateFeatures` functions\\n\\t *\\n\\t * @dev Calculated based on:\\n\\t *      1) operator's own permission set read from userRoles[operator]\\n\\t *      2) target permission set - what is already set on the target\\n\\t *      3) desired permission set - what do we want set target to\\n\\t *\\n\\t * @dev Corner cases:\\n\\t *      1) Operator is super admin and its permission set is `FULL_PRIVILEGES_MASK`:\\n\\t *        `desired` bitset is returned regardless of the `target` permission set value\\n\\t *        (what operator sets is what they get)\\n\\t *      2) Operator with no permissions (zero bitset):\\n\\t *        `target` bitset is returned regardless of the `desired` value\\n\\t *        (operator has no authority and cannot modify anything)\\n\\t *\\n\\t * @dev Example:\\n\\t *      Consider an operator with the permissions bitmask     00001111\\n\\t *      is about to modify the target permission set          01010101\\n\\t *      Operator wants to set that permission set to          00110011\\n\\t *      Based on their role, an operator has the permissions\\n\\t *      to update only lowest 4 bits on the target, meaning that\\n\\t *      high 4 bits of the target set in this example is left\\n\\t *      unchanged and low 4 bits get changed as desired:      01010011\\n\\t *\\n\\t * @param operator address of the contract operator which is about to set the permissions\\n\\t * @param target input set of permissions to operator is going to modify\\n\\t * @param desired desired set of permissions operator would like to set\\n\\t * @return resulting set of permissions given operator will set\\n\\t */\\n\\tfunction evaluateBy(address operator, uint256 target, uint256 desired) public view returns (uint256) {\\n\\t\\t// read operator's permissions\\n\\t\\tuint256 p = getRole(operator);\\n\\n\\t\\t// taking into account operator's permissions,\\n\\t\\t// 1) enable the permissions desired on the `target`\\n\\t\\ttarget |= p & desired;\\n\\t\\t// 2) disable the permissions desired on the `target`\\n\\t\\ttarget &= FULL_PRIVILEGES_MASK ^ (p & (FULL_PRIVILEGES_MASK ^ desired));\\n\\n\\t\\t// return calculated result\\n\\t\\treturn target;\\n\\t}\\n\\n\\t/**\\n\\t * @notice Checks if requested set of features is enabled globally on the contract\\n\\t *\\n\\t * @param required set of features to check against\\n\\t * @return true if all the features requested are enabled, false otherwise\\n\\t */\\n\\tfunction isFeatureEnabled(uint256 required) public view returns (bool) {\\n\\t\\t// delegate call to `__hasRole`, passing `features` property\\n\\t\\treturn __hasRole(features(), required);\\n\\t}\\n\\n\\t/**\\n\\t * @notice Checks if transaction sender `msg.sender` has all the permissions required\\n\\t *\\n\\t * @param required set of permissions (role) to check against\\n\\t * @return true if all the permissions requested are enabled, false otherwise\\n\\t */\\n\\tfunction isSenderInRole(uint256 required) public view returns (bool) {\\n\\t\\t// delegate call to `isOperatorInRole`, passing transaction sender\\n\\t\\treturn isOperatorInRole(msg.sender, required);\\n\\t}\\n\\n\\t/**\\n\\t * @notice Checks if operator has all the permissions (role) required\\n\\t *\\n\\t * @param operator address of the user to check role for\\n\\t * @param required set of permissions (role) to check\\n\\t * @return true if all the permissions requested are enabled, false otherwise\\n\\t */\\n\\tfunction isOperatorInRole(address operator, uint256 required) public view returns (bool) {\\n\\t\\t// delegate call to `__hasRole`, passing operator's permissions (role)\\n\\t\\treturn __hasRole(getRole(operator), required);\\n\\t}\\n\\n\\t/**\\n\\t * @dev Sets the `assignedRole` role to the operator, logs both `requestedRole` and `actualRole`\\n\\t *\\n\\t * @dev Unsafe:\\n\\t *      provides direct write access to `userRoles` mapping without any security checks,\\n\\t *      doesn't verify the executor (msg.sender) permissions,\\n\\t *      must be kept private at all times\\n\\t *\\n\\t * @param operator address of a user to alter permissions for,\\n\\t *       or self address to alter global features of the smart contract\\n\\t * @param requestedRole bitmask representing a set of permissions requested\\n\\t *      to be enabled/disabled for a user specified, used only to be logged into event\\n\\t * @param assignedRole bitmask representing a set of permissions to\\n\\t *      enable/disable for a user specified, used to update the mapping and to be logged into event\\n\\t */\\n\\tfunction __setRole(address operator, uint256 requestedRole, uint256 assignedRole) private {\\n\\t\\t// assign the role to the operator\\n\\t\\tuserRoles[operator] = assignedRole;\\n\\n\\t\\t// fire an event\\n\\t\\temit RoleUpdated(msg.sender, operator, requestedRole, assignedRole);\\n\\t}\\n\\n\\t/**\\n\\t * @dev Checks if role `actual` contains all the permissions required `required`\\n\\t *\\n\\t * @param actual existent role\\n\\t * @param required required role\\n\\t * @return true if actual has required role (all permissions), false otherwise\\n\\t */\\n\\tfunction __hasRole(uint256 actual, uint256 required) private pure returns (bool) {\\n\\t\\t// check the bitmask for the role required and return the result\\n\\t\\treturn actual & required == required;\\n\\t}\\n\\n}\\n\\n/**\\n * @title Upgradeable Access Control List // ERC1967Proxy\\n *\\n * @notice Access control smart contract provides an API to check\\n *      if a specific operation is permitted globally and/or\\n *      if a particular user has a permission to execute it.\\n *\\n * @notice It deals with two main entities: features and roles.\\n *\\n * @notice Features are designed to be used to enable/disable public functions\\n *      of the smart contract (used by a wide audience).\\n * @notice User roles are designed to control the access to restricted functions\\n *      of the smart contract (used by a limited set of maintainers).\\n *\\n * @notice Terms \\\"role\\\", \\\"permissions\\\" and \\\"set of permissions\\\" have equal meaning\\n *      in the documentation text and may be used interchangeably.\\n * @notice Terms \\\"permission\\\", \\\"single permission\\\" implies only one permission bit set.\\n *\\n * @notice Access manager is a special role which allows to grant/revoke other roles.\\n *      Access managers can only grant/revoke permissions which they have themselves.\\n *      As an example, access manager with no other roles set can only grant/revoke its own\\n *      access manager permission and nothing else.\\n *\\n * @notice Access manager permission should be treated carefully, as a super admin permission:\\n *      Access manager with even no other permission can interfere with another account by\\n *      granting own access manager permission to it and effectively creating more powerful\\n *      permission set than its own.\\n *\\n * @dev Both current and OpenZeppelin AccessControl implementations feature a similar API\\n *      to check/know \\\"who is allowed to do this thing\\\".\\n * @dev Zeppelin implementation is more flexible:\\n *      - it allows setting unlimited number of roles, while current is limited to 256 different roles\\n *      - it allows setting an admin for each role, while current allows having only one global admin\\n * @dev Current implementation is more lightweight:\\n *      - it uses only 1 bit per role, while Zeppelin uses 256 bits\\n *      - it allows setting up to 256 roles at once, in a single transaction, while Zeppelin allows\\n *        setting only one role in a single transaction\\n *\\n * @dev This smart contract is designed to be inherited by other\\n *      smart contracts which require access control management capabilities.\\n *\\n * @dev Access manager permission has a bit 255 set.\\n *      This bit must not be used by inheriting contracts for any other permissions/features.\\n *\\n * @dev This is an upgradeable version of the ACL, based on Zeppelin implementation for ERC1967,\\n *      see https://docs.openzeppelin.com/contracts/4.x/upgradeable\\n *      see https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable\\n *      see https://forum.openzeppelin.com/t/uups-proxies-tutorial-solidity-javascript/7786\\n *\\n * @author Basil Gorin\\n */\\nabstract contract UpgradeableAccessControl is InitializableAccessControl, UUPSUpgradeable {\\n\\t/**\\n\\t * @notice Returns an address of the implementation smart contract,\\n\\t *      see ERC1967Upgrade._getImplementation()\\n\\t *\\n\\t * @return the current implementation address\\n\\t */\\n\\tfunction getImplementation() public view virtual returns (address) {\\n\\t\\t// delegate to `ERC1967Upgrade._getImplementation()`\\n\\t\\treturn _getImplementation();\\n\\t}\\n\\n\\t/**\\n\\t * @inheritdoc UUPSUpgradeable\\n\\t */\\n\\tfunction _authorizeUpgrade(address) internal virtual override {\\n\\t\\t// caller must have a permission to upgrade the contract\\n\\t\\trequire(isSenderInRole(ROLE_UPGRADE_MANAGER), \\\"access denied\\\");\\n\\t}\\n}\\n\",\"keccak256\":\"0x76fb06fceb49f43e8bb3d98e6e78cc1d4a9bdb442509d9fd14784af77dffffe6\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60a0604052306080523480156200001557600080fd5b50600054610100900460ff1615808015620000375750600054600160ff909116105b8062000067575062000054306200014160201b620014d71760201c565b15801562000067575060005460ff166001145b620000cf5760405162461bcd60e51b815260206004820152602e60248201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160448201526d191e481a5b9a5d1a585b1a5e995960921b606482015260840160405180910390fd5b6000805460ff191660011790558015620000f3576000805461ff0019166101001790555b80156200013a576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a15b5062000150565b6001600160a01b03163b151590565b608051611fc46200018860003960008181610860015281816108a00152818161094d0152818161098d0152610a090152611fc46000f3fe6080604052600436106101dc5760003560e01c80639be8f49c11610102578063b3c6501511610095578063d5bb7f6711610064578063d5bb7f67146105e7578063e7dd807c14610607578063f822d5aa14610627578063fcc2c0781461064757600080fd5b8063b3c650151461056e578063c188dc7f14610590578063c688d693146105b0578063c9d91d2d146105d057600080fd5b8063ae60bda4116100d1578063ae60bda414610509578063ae682e2e14610521578063af504c9614610539578063b0c70f241461054e57600080fd5b80639be8f49c1461046f578063a941ee59146104a5578063aaf10f42146104bc578063ae5b102e146104e957600080fd5b80634ab15b581161017a578063606ae9ee11610149578063606ae9ee146103df5780636ad53e37146103ff578063700c94741461041f578063725f36261461043f57600080fd5b80634ab15b581461035f5780634f1ef2861461037f57806352d1902d1461039257806357d775f8146103a757600080fd5b80632be4a903116101b65780632be4a903146102c057806334cc5a62146102e25780633659cfe614610309578063442767331461032957600080fd5b80630b5c7cef146101e85780631d70f895146102255780632b5214161461029457600080fd5b366101e357005b600080fd5b3480156101f457600080fd5b50610208610203366004611a16565b610667565b6040516001600160c01b0390911681526020015b60405180910390f35b34801561023157600080fd5b5061026d610240366004611a16565b6099602052600090815260409020546001600160401b03811690600160401b90046001600160c01b031682565b604080516001600160401b0390931683526001600160c01b0390911660208301520161021c565b3480156102a057600080fd5b50306000908152600160205260409020545b60405190815260200161021c565b3480156102cc57600080fd5b506102e06102db366004611a33565b6106ff565b005b3480156102ee57600080fd5b5060975461020890600160401b90046001600160c01b031681565b34801561031557600080fd5b506102e0610324366004611a16565b610855565b34801561033557600080fd5b506102b2610344366004611a16565b6001600160a01b031660009081526001602052604090205490565b34801561036b57600080fd5b5061020861037a366004611a16565b61091e565b6102e061038d366004611abd565b610942565b34801561039e57600080fd5b506102b26109fc565b3480156103b357600080fd5b506097546103c7906001600160401b031681565b6040516001600160401b03909116815260200161021c565b3480156103eb57600080fd5b506102e06103fa366004611b9c565b610aaf565b34801561040b57600080fd5b506102e061041a366004611be3565b610d17565b34801561042b57600080fd5b506102e061043a366004611a33565b610fe2565b34801561044b57600080fd5b5061045f61045a366004611c18565b611115565b604051901515815260200161021c565b34801561047b57600080fd5b5061020861048a366004611a16565b6098602052600090815260409020546001600160c01b031681565b3480156104b157600080fd5b506102b26201000081565b3480156104c857600080fd5b506104d1611131565b6040516001600160a01b03909116815260200161021c565b3480156104f557600080fd5b506102e0610504366004611c31565b61113b565b34801561051557600080fd5b506102b2600160fe1b81565b34801561052d57600080fd5b506102b2600160ff1b81565b34801561054557600080fd5b506102e0611197565b34801561055a57600080fd5b506102e0610569366004611be3565b611276565b34801561057a57600080fd5b5060005460405160ff909116815260200161021c565b34801561059c57600080fd5b506102086105ab366004611a16565b611357565b3480156105bc57600080fd5b5061045f6105cb366004611c31565b61139f565b3480156105dc57600080fd5b506102b26202000081565b3480156105f357600080fd5b506102e0610602366004611c18565b6113c1565b34801561061357600080fd5b506102e0610622366004611c5d565b6113cb565b34801561063357600080fd5b506102b2610642366004611c87565b6114a0565b34801561065357600080fd5b5061045f610662366004611c18565b6114cb565b6001600160a01b03811660009081526099602090815260408083208151808301909252546001600160401b038082168352600160401b9091046001600160c01b03169282019290925260975490916106c0911642611ce8565b60975482516106d8916001600160401b031690611cfc565b6001600160401b031610156106f05750600092915050565b6020015192915050565b905090565b61070b620200006114cb565b6107305760405162461bcd60e51b815260040161072790611d22565b60405180910390fd5b806107715760405162461bcd60e51b8152602060048201526011602482015270656d70747920757365727320617272617960781b6044820152606401610727565b60005b81811015610850576000620100006107ac85858581811061079757610797611d49565b90506020020160208101906103449190611a16565b1890503063ae5b102e8585858181106107c7576107c7611d49565b90506020020160208101906107dc9190611a16565b6040516001600160e01b031960e084901b1681526001600160a01b03909116600482015260248101849052604401600060405180830381600087803b15801561082457600080fd5b505af1158015610838573d6000803e3d6000fd5b5050505050808061084890611d5f565b915050610774565b505050565b306001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016141561089e5760405162461bcd60e51b815260040161072790611d7a565b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03166108d06114e6565b6001600160a01b0316146108f65760405162461bcd60e51b815260040161072790611dc6565b6108ff81611502565b6040805160008082526020820190925261091b9183919061152b565b50565b600061092982610667565b61093283611357565b61093c9190611e12565b92915050565b306001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016141561098b5760405162461bcd60e51b815260040161072790611d7a565b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03166109bd6114e6565b6001600160a01b0316146109e35760405162461bcd60e51b815260040161072790611dc6565b6109ec82611502565b6109f88282600161152b565b5050565b6000306001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001614610a9c5760405162461bcd60e51b815260206004820152603860248201527f555550535570677261646561626c653a206d757374206e6f742062652063616c60448201527f6c6564207468726f7567682064656c656761746563616c6c00000000000000006064820152608401610727565b50600080516020611f4883398151915290565b610abb620100006114cb565b610ad75760405162461bcd60e51b815260040161072790611d22565b6001600160a01b038316610b2d5760405162461bcd60e51b815260206004820152601760248201527f74617267657420636f6e7472616374206e6f74207365740000000000000000006044820152606401610727565b6001600160a01b038216610b775760405162461bcd60e51b81526020600482015260116024820152701c9958da5c1a595b9d081b9bdd081cd95d607a1b6044820152606401610727565b6001600160c01b038116610bbd5760405162461bcd60e51b815260206004820152600d60248201526c1d985b1d59481b9bdd081cd95d609a1b6044820152606401610727565b6040516001600160a01b03831660248201526001600160c01b038216604482015260009060640160408051601f198184030181529181526020820180516001600160e01b03166340c10f1960e01b179052519091506000906001600160a01b0386169062013c6890610c30908590611e66565b60006040518083038160008787f1925050503d8060008114610c6e576040519150601f19603f3d011682016040523d82523d6000602084013e610c73565b606091505b5050905080610cc45760405162461bcd60e51b815260206004820152601e60248201527f6c6f772d6c6576656c2066756e6374696f6e2063616c6c206661696c656400006044820152606401610727565b6040516001600160c01b03841681526001600160a01b0380861691908716907ffa108e074cc0a8b3b4e7db1c5cf396630ae28d2e60d333d9d991f5bbb8ed84a19060200160405180910390a35050505050565b610d23620100006114cb565b610d3f5760405162461bcd60e51b815260040161072790611d22565b6001600160a01b038216610d895760405162461bcd60e51b81526020600482015260116024820152701c9958da5c1a595b9d081b9bdd081cd95d607a1b6044820152606401610727565b6001600160c01b038116610dcf5760405162461bcd60e51b815260206004820152600d60248201526c1d985b1d59481b9bdd081cd95d609a1b6044820152606401610727565b6000610dda3361091e565b9050806001600160c01b0316826001600160c01b03161115610e335760405162461bcd60e51b8152602060048201526012602482015271185b1b1bddd85b98d948195e18d95959195960721b6044820152606401610727565b47826001600160c01b03161115610e7f5760405162461bcd60e51b815260206004820152601060248201526f18985b185b98d948195e18d95959195960821b6044820152606401610727565b336000908152609960205260409020609754610ea4906001600160401b031642611ce8565b6097548254610ebf916001600160401b039081169116611cfc565b6001600160401b03161015610ef15780546001600160401b0316600160401b6001600160c01b03851602178155610f3a565b805483908290600890610f15908490600160401b90046001600160c01b0316611e82565b92506101000a8154816001600160c01b0302191690836001600160c01b031602179055505b80546001600160401b03421667ffffffffffffffff199091161781556040516001600160a01b038516906001600160c01b03851680156108fc02916000818181858888f19350505050158015610f94573d6000803e3d6000fd5b506040516001600160c01b03841681526001600160a01b038516907fc3c20be205c55c7317e936ca07611fa72ccdb0d5524d5eb4243d46c2936d5af39060200160405180910390a250505050565b610fee620200006114cb565b61100a5760405162461bcd60e51b815260040161072790611d22565b8061104b5760405162461bcd60e51b8152602060048201526011602482015270656d70747920757365727320617272617960781b6044820152606401610727565b60005b818110156108505760006201000061107185858581811061079757610797611d49565b1790503063ae5b102e85858581811061108c5761108c611d49565b90506020020160208101906110a19190611a16565b6040516001600160e01b031960e084901b1681526001600160a01b03909116600482015260248101849052604401600060405180830381600087803b1580156110e957600080fd5b505af11580156110fd573d6000803e3d6000fd5b5050505050808061110d90611d5f565b91505061104e565b3060009081526001602052604081205461093c905b8316831490565b60006106fa6114e6565b611148600160ff1b6114cb565b6111645760405162461bcd60e51b815260040161072790611d22565b6109f882826111923361118c876001600160a01b031660009081526001602052604090205490565b866114a0565b611696565b600054610100900460ff16158080156111b75750600054600160ff909116105b806111d15750303b1580156111d1575060005460ff166001145b6111ed5760405162461bcd60e51b815260040161072790611ead565b6000805460ff191660011790558015611210576000805461ff0019166101001790555b611219336116f2565b61122e62015180678ac7230489e800006113cb565b801561091b576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a150565b611282620200006114cb565b61129e5760405162461bcd60e51b815260040161072790611d22565b6001600160a01b0382166112eb5760405162461bcd60e51b81526020600482015260146024820152731d5cd95c881859191c995cdcc81b9bdd081cd95d60621b6044820152606401610727565b6001600160a01b03821660008181526098602090815260409182902080546001600160c01b0319166001600160c01b03861690811790915591519182527f8beb0c8de369fd2d147b2415c8b1a8641927ec439adca4ccb1ae1010522cc0de910160405180910390a25050565b6001600160a01b0381166000908152609860205260408120546001600160c01b03168061139657609754600160401b90046001600160c01b0316611398565b805b9392505050565b6001600160a01b0382166000908152600160205260408120546113989061112a565b61091b308261113b565b6113d7620200006114cb565b6113f35760405162461bcd60e51b815260040161072790611d22565b6001600160401b0382166114405760405162461bcd60e51b8152602060048201526014602482015273195c1bd8da081b195b99dd1a081b9bdd081cd95d60621b6044820152606401610727565b6001600160401b038216600160401b6001600160c01b03831690810282176097556040805192835260208301919091527f54ff22cc88428b6eaac3a463f08f58b8d03b3d9fc4ce4b430501f3d34fd675e191015b60405180910390a15050565b6001600160a01b03929092166000908152600160205260409020546000198084188216189216171690565b600061093c338361139f565b6001600160a01b03163b151590565b600080516020611f48833981519152546001600160a01b031690565b61150f600160fe1b6114cb565b61091b5760405162461bcd60e51b815260040161072790611d22565b7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435460ff161561155e57610850836117ba565b826001600160a01b03166352d1902d6040518163ffffffff1660e01b8152600401602060405180830381865afa9250505080156115b8575060408051601f3d908101601f191682019092526115b591810190611efb565b60015b61161b5760405162461bcd60e51b815260206004820152602e60248201527f45524331393637557067726164653a206e657720696d706c656d656e7461746960448201526d6f6e206973206e6f74205555505360901b6064820152608401610727565b600080516020611f48833981519152811461168a5760405162461bcd60e51b815260206004820152602960248201527f45524331393637557067726164653a20756e737570706f727465642070726f786044820152681a58589b195555525160ba1b6064820152608401610727565b50610850838383611856565b6001600160a01b038316600081815260016020908152604091829020849055815185815290810184905233917f5a10526456f5116c0b7b80582c217d666243fd51b6a2d92c8011e601c2462e5f910160405180910390a3505050565b600054610100900460ff16158080156117125750600054600160ff909116105b8061172c5750303b15801561172c575060005460ff166001145b6117485760405162461bcd60e51b815260040161072790611ead565b6000805460ff19166001179055801561176b576000805461ff0019166101001790555b6117788260001980611696565b80156109f8576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb384740249890602001611494565b6001600160a01b0381163b6118275760405162461bcd60e51b815260206004820152602d60248201527f455243313936373a206e657720696d706c656d656e746174696f6e206973206e60448201526c1bdd08184818dbdb9d1c9858dd609a1b6064820152608401610727565b600080516020611f4883398151915280546001600160a01b0319166001600160a01b0392909216919091179055565b61185f83611881565b60008251118061186c5750805b156108505761187b83836118c1565b50505050565b61188a816117ba565b6040516001600160a01b038216907fbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b90600090a250565b60606113988383604051806060016040528060278152602001611f68602791396060600080856001600160a01b0316856040516118fe9190611e66565b600060405180830381855af49150503d8060008114611939576040519150601f19603f3d011682016040523d82523d6000602084013e61193e565b606091505b509150915061194f86838387611959565b9695505050505050565b606083156119c55782516119be576001600160a01b0385163b6119be5760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e74726163740000006044820152606401610727565b50816119cf565b6119cf83836119d7565b949350505050565b8151156119e75781518083602001fd5b8060405162461bcd60e51b81526004016107279190611f14565b6001600160a01b038116811461091b57600080fd5b600060208284031215611a2857600080fd5b813561139881611a01565b60008060208385031215611a4657600080fd5b82356001600160401b0380821115611a5d57600080fd5b818501915085601f830112611a7157600080fd5b813581811115611a8057600080fd5b8660208260051b8501011115611a9557600080fd5b60209290920196919550909350505050565b634e487b7160e01b600052604160045260246000fd5b60008060408385031215611ad057600080fd5b8235611adb81611a01565b915060208301356001600160401b0380821115611af757600080fd5b818501915085601f830112611b0b57600080fd5b813581811115611b1d57611b1d611aa7565b604051601f8201601f19908116603f01168101908382118183101715611b4557611b45611aa7565b81604052828152886020848701011115611b5e57600080fd5b8260208601602083013760006020848301015280955050505050509250929050565b80356001600160c01b0381168114611b9757600080fd5b919050565b600080600060608486031215611bb157600080fd5b8335611bbc81611a01565b92506020840135611bcc81611a01565b9150611bda60408501611b80565b90509250925092565b60008060408385031215611bf657600080fd5b8235611c0181611a01565b9150611c0f60208401611b80565b90509250929050565b600060208284031215611c2a57600080fd5b5035919050565b60008060408385031215611c4457600080fd5b8235611c4f81611a01565b946020939093013593505050565b60008060408385031215611c7057600080fd5b82356001600160401b0381168114611c0157600080fd5b600080600060608486031215611c9c57600080fd5b8335611ca781611a01565b95602085013595506040909401359392505050565b634e487b7160e01b600052601260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b600082611cf757611cf7611cbc565b500490565b60006001600160401b0380841680611d1657611d16611cbc565b92169190910492915050565b6020808252600d908201526c1858d8d95cdcc819195b9a5959609a1b604082015260600190565b634e487b7160e01b600052603260045260246000fd5b6000600019821415611d7357611d73611cd2565b5060010190565b6020808252602c908201527f46756e6374696f6e206d7573742062652063616c6c6564207468726f7567682060408201526b19195b1959d85d1958d85b1b60a21b606082015260800190565b6020808252602c908201527f46756e6374696f6e206d7573742062652063616c6c6564207468726f7567682060408201526b6163746976652070726f787960a01b606082015260800190565b60006001600160c01b0383811690831681811015611e3257611e32611cd2565b039392505050565b60005b83811015611e55578181015183820152602001611e3d565b8381111561187b5750506000910152565b60008251611e78818460208701611e3a565b9190910192915050565b60006001600160c01b03828116848216808303821115611ea457611ea4611cd2565b01949350505050565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b600060208284031215611f0d57600080fd5b5051919050565b6020815260008251806020840152611f33816040850160208701611e3a565b601f01601f1916919091016040019291505056fe360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc416464726573733a206c6f772d6c6576656c2064656c65676174652063616c6c206661696c6564a2646970667358221220899c849e64315c96fe2004a17f0224b866d67125a2daf073313c3d74b63ec08a64736f6c634300080b0033",
+  "deployedBytecode": "0x6080604052600436106101dc5760003560e01c80639be8f49c11610102578063b3c6501511610095578063d5bb7f6711610064578063d5bb7f67146105e7578063e7dd807c14610607578063f822d5aa14610627578063fcc2c0781461064757600080fd5b8063b3c650151461056e578063c188dc7f14610590578063c688d693146105b0578063c9d91d2d146105d057600080fd5b8063ae60bda4116100d1578063ae60bda414610509578063ae682e2e14610521578063af504c9614610539578063b0c70f241461054e57600080fd5b80639be8f49c1461046f578063a941ee59146104a5578063aaf10f42146104bc578063ae5b102e146104e957600080fd5b80634ab15b581161017a578063606ae9ee11610149578063606ae9ee146103df5780636ad53e37146103ff578063700c94741461041f578063725f36261461043f57600080fd5b80634ab15b581461035f5780634f1ef2861461037f57806352d1902d1461039257806357d775f8146103a757600080fd5b80632be4a903116101b65780632be4a903146102c057806334cc5a62146102e25780633659cfe614610309578063442767331461032957600080fd5b80630b5c7cef146101e85780631d70f895146102255780632b5214161461029457600080fd5b366101e357005b600080fd5b3480156101f457600080fd5b50610208610203366004611a16565b610667565b6040516001600160c01b0390911681526020015b60405180910390f35b34801561023157600080fd5b5061026d610240366004611a16565b6099602052600090815260409020546001600160401b03811690600160401b90046001600160c01b031682565b604080516001600160401b0390931683526001600160c01b0390911660208301520161021c565b3480156102a057600080fd5b50306000908152600160205260409020545b60405190815260200161021c565b3480156102cc57600080fd5b506102e06102db366004611a33565b6106ff565b005b3480156102ee57600080fd5b5060975461020890600160401b90046001600160c01b031681565b34801561031557600080fd5b506102e0610324366004611a16565b610855565b34801561033557600080fd5b506102b2610344366004611a16565b6001600160a01b031660009081526001602052604090205490565b34801561036b57600080fd5b5061020861037a366004611a16565b61091e565b6102e061038d366004611abd565b610942565b34801561039e57600080fd5b506102b26109fc565b3480156103b357600080fd5b506097546103c7906001600160401b031681565b6040516001600160401b03909116815260200161021c565b3480156103eb57600080fd5b506102e06103fa366004611b9c565b610aaf565b34801561040b57600080fd5b506102e061041a366004611be3565b610d17565b34801561042b57600080fd5b506102e061043a366004611a33565b610fe2565b34801561044b57600080fd5b5061045f61045a366004611c18565b611115565b604051901515815260200161021c565b34801561047b57600080fd5b5061020861048a366004611a16565b6098602052600090815260409020546001600160c01b031681565b3480156104b157600080fd5b506102b26201000081565b3480156104c857600080fd5b506104d1611131565b6040516001600160a01b03909116815260200161021c565b3480156104f557600080fd5b506102e0610504366004611c31565b61113b565b34801561051557600080fd5b506102b2600160fe1b81565b34801561052d57600080fd5b506102b2600160ff1b81565b34801561054557600080fd5b506102e0611197565b34801561055a57600080fd5b506102e0610569366004611be3565b611276565b34801561057a57600080fd5b5060005460405160ff909116815260200161021c565b34801561059c57600080fd5b506102086105ab366004611a16565b611357565b3480156105bc57600080fd5b5061045f6105cb366004611c31565b61139f565b3480156105dc57600080fd5b506102b26202000081565b3480156105f357600080fd5b506102e0610602366004611c18565b6113c1565b34801561061357600080fd5b506102e0610622366004611c5d565b6113cb565b34801561063357600080fd5b506102b2610642366004611c87565b6114a0565b34801561065357600080fd5b5061045f610662366004611c18565b6114cb565b6001600160a01b03811660009081526099602090815260408083208151808301909252546001600160401b038082168352600160401b9091046001600160c01b03169282019290925260975490916106c0911642611ce8565b60975482516106d8916001600160401b031690611cfc565b6001600160401b031610156106f05750600092915050565b6020015192915050565b905090565b61070b620200006114cb565b6107305760405162461bcd60e51b815260040161072790611d22565b60405180910390fd5b806107715760405162461bcd60e51b8152602060048201526011602482015270656d70747920757365727320617272617960781b6044820152606401610727565b60005b81811015610850576000620100006107ac85858581811061079757610797611d49565b90506020020160208101906103449190611a16565b1890503063ae5b102e8585858181106107c7576107c7611d49565b90506020020160208101906107dc9190611a16565b6040516001600160e01b031960e084901b1681526001600160a01b03909116600482015260248101849052604401600060405180830381600087803b15801561082457600080fd5b505af1158015610838573d6000803e3d6000fd5b5050505050808061084890611d5f565b915050610774565b505050565b306001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016141561089e5760405162461bcd60e51b815260040161072790611d7a565b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03166108d06114e6565b6001600160a01b0316146108f65760405162461bcd60e51b815260040161072790611dc6565b6108ff81611502565b6040805160008082526020820190925261091b9183919061152b565b50565b600061092982610667565b61093283611357565b61093c9190611e12565b92915050565b306001600160a01b037f000000000000000000000000000000000000000000000000000000000000000016141561098b5760405162461bcd60e51b815260040161072790611d7a565b7f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03166109bd6114e6565b6001600160a01b0316146109e35760405162461bcd60e51b815260040161072790611dc6565b6109ec82611502565b6109f88282600161152b565b5050565b6000306001600160a01b037f00000000000000000000000000000000000000000000000000000000000000001614610a9c5760405162461bcd60e51b815260206004820152603860248201527f555550535570677261646561626c653a206d757374206e6f742062652063616c60448201527f6c6564207468726f7567682064656c656761746563616c6c00000000000000006064820152608401610727565b50600080516020611f4883398151915290565b610abb620100006114cb565b610ad75760405162461bcd60e51b815260040161072790611d22565b6001600160a01b038316610b2d5760405162461bcd60e51b815260206004820152601760248201527f74617267657420636f6e7472616374206e6f74207365740000000000000000006044820152606401610727565b6001600160a01b038216610b775760405162461bcd60e51b81526020600482015260116024820152701c9958da5c1a595b9d081b9bdd081cd95d607a1b6044820152606401610727565b6001600160c01b038116610bbd5760405162461bcd60e51b815260206004820152600d60248201526c1d985b1d59481b9bdd081cd95d609a1b6044820152606401610727565b6040516001600160a01b03831660248201526001600160c01b038216604482015260009060640160408051601f198184030181529181526020820180516001600160e01b03166340c10f1960e01b179052519091506000906001600160a01b0386169062013c6890610c30908590611e66565b60006040518083038160008787f1925050503d8060008114610c6e576040519150601f19603f3d011682016040523d82523d6000602084013e610c73565b606091505b5050905080610cc45760405162461bcd60e51b815260206004820152601e60248201527f6c6f772d6c6576656c2066756e6374696f6e2063616c6c206661696c656400006044820152606401610727565b6040516001600160c01b03841681526001600160a01b0380861691908716907ffa108e074cc0a8b3b4e7db1c5cf396630ae28d2e60d333d9d991f5bbb8ed84a19060200160405180910390a35050505050565b610d23620100006114cb565b610d3f5760405162461bcd60e51b815260040161072790611d22565b6001600160a01b038216610d895760405162461bcd60e51b81526020600482015260116024820152701c9958da5c1a595b9d081b9bdd081cd95d607a1b6044820152606401610727565b6001600160c01b038116610dcf5760405162461bcd60e51b815260206004820152600d60248201526c1d985b1d59481b9bdd081cd95d609a1b6044820152606401610727565b6000610dda3361091e565b9050806001600160c01b0316826001600160c01b03161115610e335760405162461bcd60e51b8152602060048201526012602482015271185b1b1bddd85b98d948195e18d95959195960721b6044820152606401610727565b47826001600160c01b03161115610e7f5760405162461bcd60e51b815260206004820152601060248201526f18985b185b98d948195e18d95959195960821b6044820152606401610727565b336000908152609960205260409020609754610ea4906001600160401b031642611ce8565b6097548254610ebf916001600160401b039081169116611cfc565b6001600160401b03161015610ef15780546001600160401b0316600160401b6001600160c01b03851602178155610f3a565b805483908290600890610f15908490600160401b90046001600160c01b0316611e82565b92506101000a8154816001600160c01b0302191690836001600160c01b031602179055505b80546001600160401b03421667ffffffffffffffff199091161781556040516001600160a01b038516906001600160c01b03851680156108fc02916000818181858888f19350505050158015610f94573d6000803e3d6000fd5b506040516001600160c01b03841681526001600160a01b038516907fc3c20be205c55c7317e936ca07611fa72ccdb0d5524d5eb4243d46c2936d5af39060200160405180910390a250505050565b610fee620200006114cb565b61100a5760405162461bcd60e51b815260040161072790611d22565b8061104b5760405162461bcd60e51b8152602060048201526011602482015270656d70747920757365727320617272617960781b6044820152606401610727565b60005b818110156108505760006201000061107185858581811061079757610797611d49565b1790503063ae5b102e85858581811061108c5761108c611d49565b90506020020160208101906110a19190611a16565b6040516001600160e01b031960e084901b1681526001600160a01b03909116600482015260248101849052604401600060405180830381600087803b1580156110e957600080fd5b505af11580156110fd573d6000803e3d6000fd5b5050505050808061110d90611d5f565b91505061104e565b3060009081526001602052604081205461093c905b8316831490565b60006106fa6114e6565b611148600160ff1b6114cb565b6111645760405162461bcd60e51b815260040161072790611d22565b6109f882826111923361118c876001600160a01b031660009081526001602052604090205490565b866114a0565b611696565b600054610100900460ff16158080156111b75750600054600160ff909116105b806111d15750303b1580156111d1575060005460ff166001145b6111ed5760405162461bcd60e51b815260040161072790611ead565b6000805460ff191660011790558015611210576000805461ff0019166101001790555b611219336116f2565b61122e62015180678ac7230489e800006113cb565b801561091b576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb38474024989060200160405180910390a150565b611282620200006114cb565b61129e5760405162461bcd60e51b815260040161072790611d22565b6001600160a01b0382166112eb5760405162461bcd60e51b81526020600482015260146024820152731d5cd95c881859191c995cdcc81b9bdd081cd95d60621b6044820152606401610727565b6001600160a01b03821660008181526098602090815260409182902080546001600160c01b0319166001600160c01b03861690811790915591519182527f8beb0c8de369fd2d147b2415c8b1a8641927ec439adca4ccb1ae1010522cc0de910160405180910390a25050565b6001600160a01b0381166000908152609860205260408120546001600160c01b03168061139657609754600160401b90046001600160c01b0316611398565b805b9392505050565b6001600160a01b0382166000908152600160205260408120546113989061112a565b61091b308261113b565b6113d7620200006114cb565b6113f35760405162461bcd60e51b815260040161072790611d22565b6001600160401b0382166114405760405162461bcd60e51b8152602060048201526014602482015273195c1bd8da081b195b99dd1a081b9bdd081cd95d60621b6044820152606401610727565b6001600160401b038216600160401b6001600160c01b03831690810282176097556040805192835260208301919091527f54ff22cc88428b6eaac3a463f08f58b8d03b3d9fc4ce4b430501f3d34fd675e191015b60405180910390a15050565b6001600160a01b03929092166000908152600160205260409020546000198084188216189216171690565b600061093c338361139f565b6001600160a01b03163b151590565b600080516020611f48833981519152546001600160a01b031690565b61150f600160fe1b6114cb565b61091b5760405162461bcd60e51b815260040161072790611d22565b7f4910fdfa16fed3260ed0e7147f7cc6da11a60208b5b9406d12a635614ffd91435460ff161561155e57610850836117ba565b826001600160a01b03166352d1902d6040518163ffffffff1660e01b8152600401602060405180830381865afa9250505080156115b8575060408051601f3d908101601f191682019092526115b591810190611efb565b60015b61161b5760405162461bcd60e51b815260206004820152602e60248201527f45524331393637557067726164653a206e657720696d706c656d656e7461746960448201526d6f6e206973206e6f74205555505360901b6064820152608401610727565b600080516020611f48833981519152811461168a5760405162461bcd60e51b815260206004820152602960248201527f45524331393637557067726164653a20756e737570706f727465642070726f786044820152681a58589b195555525160ba1b6064820152608401610727565b50610850838383611856565b6001600160a01b038316600081815260016020908152604091829020849055815185815290810184905233917f5a10526456f5116c0b7b80582c217d666243fd51b6a2d92c8011e601c2462e5f910160405180910390a3505050565b600054610100900460ff16158080156117125750600054600160ff909116105b8061172c5750303b15801561172c575060005460ff166001145b6117485760405162461bcd60e51b815260040161072790611ead565b6000805460ff19166001179055801561176b576000805461ff0019166101001790555b6117788260001980611696565b80156109f8576000805461ff0019169055604051600181527f7f26b83ff96e1f2b6a682f133852f6798a09c465da95921460cefb384740249890602001611494565b6001600160a01b0381163b6118275760405162461bcd60e51b815260206004820152602d60248201527f455243313936373a206e657720696d706c656d656e746174696f6e206973206e60448201526c1bdd08184818dbdb9d1c9858dd609a1b6064820152608401610727565b600080516020611f4883398151915280546001600160a01b0319166001600160a01b0392909216919091179055565b61185f83611881565b60008251118061186c5750805b156108505761187b83836118c1565b50505050565b61188a816117ba565b6040516001600160a01b038216907fbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b90600090a250565b60606113988383604051806060016040528060278152602001611f68602791396060600080856001600160a01b0316856040516118fe9190611e66565b600060405180830381855af49150503d8060008114611939576040519150601f19603f3d011682016040523d82523d6000602084013e61193e565b606091505b509150915061194f86838387611959565b9695505050505050565b606083156119c55782516119be576001600160a01b0385163b6119be5760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a2063616c6c20746f206e6f6e2d636f6e74726163740000006044820152606401610727565b50816119cf565b6119cf83836119d7565b949350505050565b8151156119e75781518083602001fd5b8060405162461bcd60e51b81526004016107279190611f14565b6001600160a01b038116811461091b57600080fd5b600060208284031215611a2857600080fd5b813561139881611a01565b60008060208385031215611a4657600080fd5b82356001600160401b0380821115611a5d57600080fd5b818501915085601f830112611a7157600080fd5b813581811115611a8057600080fd5b8660208260051b8501011115611a9557600080fd5b60209290920196919550909350505050565b634e487b7160e01b600052604160045260246000fd5b60008060408385031215611ad057600080fd5b8235611adb81611a01565b915060208301356001600160401b0380821115611af757600080fd5b818501915085601f830112611b0b57600080fd5b813581811115611b1d57611b1d611aa7565b604051601f8201601f19908116603f01168101908382118183101715611b4557611b45611aa7565b81604052828152886020848701011115611b5e57600080fd5b8260208601602083013760006020848301015280955050505050509250929050565b80356001600160c01b0381168114611b9757600080fd5b919050565b600080600060608486031215611bb157600080fd5b8335611bbc81611a01565b92506020840135611bcc81611a01565b9150611bda60408501611b80565b90509250925092565b60008060408385031215611bf657600080fd5b8235611c0181611a01565b9150611c0f60208401611b80565b90509250929050565b600060208284031215611c2a57600080fd5b5035919050565b60008060408385031215611c4457600080fd5b8235611c4f81611a01565b946020939093013593505050565b60008060408385031215611c7057600080fd5b82356001600160401b0381168114611c0157600080fd5b600080600060608486031215611c9c57600080fd5b8335611ca781611a01565b95602085013595506040909401359392505050565b634e487b7160e01b600052601260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b600082611cf757611cf7611cbc565b500490565b60006001600160401b0380841680611d1657611d16611cbc565b92169190910492915050565b6020808252600d908201526c1858d8d95cdcc819195b9a5959609a1b604082015260600190565b634e487b7160e01b600052603260045260246000fd5b6000600019821415611d7357611d73611cd2565b5060010190565b6020808252602c908201527f46756e6374696f6e206d7573742062652063616c6c6564207468726f7567682060408201526b19195b1959d85d1958d85b1b60a21b606082015260800190565b6020808252602c908201527f46756e6374696f6e206d7573742062652063616c6c6564207468726f7567682060408201526b6163746976652070726f787960a01b606082015260800190565b60006001600160c01b0383811690831681811015611e3257611e32611cd2565b039392505050565b60005b83811015611e55578181015183820152602001611e3d565b8381111561187b5750506000910152565b60008251611e78818460208701611e3a565b9190910192915050565b60006001600160c01b03828116848216808303821115611ea457611ea4611cd2565b01949350505050565b6020808252602e908201527f496e697469616c697a61626c653a20636f6e747261637420697320616c72656160408201526d191e481a5b9a5d1a585b1a5e995960921b606082015260800190565b600060208284031215611f0d57600080fd5b5051919050565b6020815260008251806020840152611f33816040850160208701611e3a565b601f01601f1916919091016040019291505056fe360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc416464726573733a206c6f772d6c6576656c2064656c65676174652063616c6c206661696c6564a2646970667358221220899c849e64315c96fe2004a17f0224b866d67125a2daf073313c3d74b63ec08a64736f6c634300080b0033",
+  "devdoc": {
+    "author": "Basil Gorin",
+    "details": "In order to get ETH, an account must have `ROLE_FAUCET_USER` permission`ROLE_FAUCET_MANAGER` can set ETH withdrawal limits for the faucet users",
+    "events": {
+      "ETHWithdrawn(address,uint192)": {
+        "details": "Fired in `withdrawEth`",
+        "params": {
+          "to": "an address to send ETH to",
+          "value": "amount of ETH to send, wei"
+        }
+      },
+      "EpochParamsUpdated(uint64,uint192)": {
+        "details": "Fired in `setEpochParams`",
+        "params": {
+          "epochLength": "new epoch length, seconds",
+          "weiLimitPerEpoch": "new ETH limit per epoch, wei"
+        }
+      },
+      "MintProxied(address,address,uint192)": {
+        "details": "Fired in `mint`",
+        "params": {
+          "target": "target smart contract address to invoke function call on",
+          "to": "an address to mint tokens to",
+          "value": "amount of tokens to mint, wei"
+        }
+      },
+      "WeiLimitUpdated(address,uint192)": {
+        "details": "Fired in `setWeiLimitPerEpochForUser`",
+        "params": {
+          "userAddress": "user address to update the wei limit for",
+          "weiLimitPerEpoch": "new ETH limit per epoch for user, wei"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "addUsers(address[])": {
+        "details": "Restricted access function to add faucet users in bulk mode",
+        "params": {
+          "users": "user addresses to add"
+        }
+      },
+      "evaluateBy(address,uint256,uint256)": {
+        "details": "Calculated based on:      1) operator's own permission set read from userRoles[operator]      2) target permission set - what is already set on the target      3) desired permission set - what do we want set target toCorner cases:      1) Operator is super admin and its permission set is `FULL_PRIVILEGES_MASK`:        `desired` bitset is returned regardless of the `target` permission set value        (what operator sets is what they get)      2) Operator with no permissions (zero bitset):        `target` bitset is returned regardless of the `desired` value        (operator has no authority and cannot modify anything)Example:      Consider an operator with the permissions bitmask     00001111      is about to modify the target permission set          01010101      Operator wants to set that permission set to          00110011      Based on their role, an operator has the permissions      to update only lowest 4 bits on the target, meaning that      high 4 bits of the target set in this example is left      unchanged and low 4 bits get changed as desired:      01010011",
+        "params": {
+          "desired": "desired set of permissions operator would like to set",
+          "operator": "address of the contract operator which is about to set the permissions",
+          "target": "input set of permissions to operator is going to modify"
+        },
+        "returns": {
+          "_0": "resulting set of permissions given operator will set"
+        }
+      },
+      "features()": {
+        "details": "Effectively reads userRoles role for the contract itself",
+        "returns": {
+          "_0": "256-bit bitmask of the features enabled"
+        }
+      },
+      "getImplementation()": {
+        "returns": {
+          "_0": "the current implementation address"
+        }
+      },
+      "getInitializedVersion()": {
+        "details": "Highest version that has been initialized.      Non-zero value means contract was already initialized.see {Initializable}, {reinitializer}.",
+        "returns": {
+          "_0": "highest version that has been initialized"
+        }
+      },
+      "getRole(address)": {
+        "details": "Having a simple getter instead of making the mapping public      allows enforcing the encapsulation of the mapping and protects from      writing to it directly in the inheriting smart contracts",
+        "params": {
+          "operator": "address of a user to read permissions for,      or self address to read global features of the smart contract"
+        }
+      },
+      "isFeatureEnabled(uint256)": {
+        "params": {
+          "required": "set of features to check against"
+        },
+        "returns": {
+          "_0": "true if all the features requested are enabled, false otherwise"
+        }
+      },
+      "isOperatorInRole(address,uint256)": {
+        "params": {
+          "operator": "address of the user to check role for",
+          "required": "set of permissions (role) to check"
+        },
+        "returns": {
+          "_0": "true if all the permissions requested are enabled, false otherwise"
+        }
+      },
+      "isSenderInRole(uint256)": {
+        "params": {
+          "required": "set of permissions (role) to check against"
+        },
+        "returns": {
+          "_0": "true if all the permissions requested are enabled, false otherwise"
+        }
+      },
+      "mint(address,address,uint192)": {
+        "details": "Proxies the request as `target.mint(to, value)`, and can be used      to mint any \"mintable\" entity, that is having the `mint(address,uint256)`      function availableImplicitly limits the value to the 192-bits space, effectively protecting      target token contract from integer overflowRequires executor to have `ROLE_FAUCET_USER` permissionRequires Faucet to have the permission to execute `mint` function on the      target contract (don't forget to setup it)",
+        "params": {
+          "target": "target smart contract address to invoke function call on, required",
+          "to": "an address to mint tokens to, required",
+          "value": "amount of tokens to mint, wei, required"
+        }
+      },
+      "postConstruct()": {
+        "details": "\"Constructor replacement\" for upgradeable, must be execute immediately after deployment      see https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#initializers"
+      },
+      "proxiableUUID()": {
+        "details": "Implementation of the ERC1822 {proxiableUUID} function. This returns the storage slot used by the implementation. It is used to validate the implementation's compatibility when performing an upgrade. IMPORTANT: A proxy pointing at a proxiable contract should not be considered proxiable itself, because this risks bricking a proxy that upgrades to it, by delegating to itself until out of gas. Thus it is critical that this function revert if invoked through a proxy. This is guaranteed by the `notDelegated` modifier."
+      },
+      "removeUsers(address[])": {
+        "details": "Restricted access function to remove faucet users in bulk mode",
+        "params": {
+          "users": "user addresses to remove"
+        }
+      },
+      "setEpochParams(uint64,uint192)": {
+        "details": "Restricted access function to update global throttling params,      updates `epochLength` and `weiLimitPerEpoch` global params",
+        "params": {
+          "_epochLength": "new epoch length, seconds, required",
+          "_weiLimitPerEpoch": "new ETH limit per epoch, wei"
+        }
+      },
+      "setWeiLimitPerEpochForUser(address,uint192)": {
+        "details": "Restricted access function to update throttling params for a user,      updates `weiLimitPerEpochOverrides` param for a particular user",
+        "params": {
+          "_userAddress": "user address to update the wei limit for, required",
+          "_weiLimitPerEpoch": "new ETH limit per epoch for user, wei"
+        }
+      },
+      "updateFeatures(uint256)": {
+        "details": "Requires transaction sender to have `ROLE_ACCESS_MANAGER` permissionFunction is left for backward compatibility with older versions",
+        "params": {
+          "_mask": "bitmask representing a set of features to enable/disable"
+        }
+      },
+      "updateRole(address,uint256)": {
+        "details": "Setting role to zero is equivalent to removing an all permissionsSetting role to `FULL_PRIVILEGES_MASK` is equivalent to      copying senders' permissions (role) to the userRequires transaction sender to have `ROLE_ACCESS_MANAGER` permission",
+        "params": {
+          "operator": "address of a user to alter permissions for,       or self address to alter global features of the smart contract",
+          "role": "bitmask representing a set of permissions to      enable/disable for a user specified"
+        }
+      },
+      "upgradeTo(address)": {
+        "custom:oz-upgrades-unsafe-allow-reachable": "delegatecall",
+        "details": "Upgrade the implementation of the proxy to `newImplementation`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+      },
+      "upgradeToAndCall(address,bytes)": {
+        "custom:oz-upgrades-unsafe-allow-reachable": "delegatecall",
+        "details": "Upgrade the implementation of the proxy to `newImplementation`, and subsequently execute the function call encoded in `data`. Calls {_authorizeUpgrade}. Emits an {Upgraded} event."
+      },
+      "weiLeftInEpochForUser(address)": {
+        "params": {
+          "_userAddress": "user address to check amount of ETH available for"
+        },
+        "returns": {
+          "_0": "available ETH for a user address available in current epoch"
+        }
+      },
+      "weiLimitPerEpochForUser(address)": {
+        "params": {
+          "_userAddress": "user address to check the actual ETH limit for"
+        },
+        "returns": {
+          "_0": "ETH limit for a user address, wei"
+        }
+      },
+      "weiWithdrawnInCurrentEpoch(address)": {
+        "params": {
+          "_userAddress": "user address to check the withdrawn ETH for"
+        },
+        "returns": {
+          "_0": "ETH withdrawn in current epoch by the user address, wei"
+        }
+      },
+      "withdrawEth(address,uint192)": {
+        "params": {
+          "to": "an address to send ETH to, required",
+          "value": "amount of ETH to send, wei, required"
+        }
+      }
+    },
+    "stateVariables": {
+      "ROLE_FAUCET_MANAGER": {
+        "details": "Grants permission to change throttling settings:      `epochLength`, `weiLimitPerEpoch`, `weiLimitPerEpochOverrides`Faucet manager is responsible for faucet configuration and managing      faucet users`ROLE_FAUCET_MANAGER` is required to execute:      `setEpochParams`, `setWeiLimitPerEpochForUser`"
+      },
+      "ROLE_FAUCET_USER": {
+        "details": "Grants permission to withdraw ETH (throttled)Faucet user is allowed to get ETH via the faucet`ROLE_FAUCET_USER` is required to execute:      `withdrawEth`, `mint`"
+      },
+      "epochLength": {
+        "details": "We divide the time into the epochs of equal size, and make sure      that no user exceeds the ETH limit set for one epochThe epoch length (size) is configurable, but we expect it to be equal      to 24h in most cases (the default value)Epoch length can be updated by the faucet manager `ROLE_FAUCET_MANAGER`Epoch length is measured in seconds"
+      },
+      "weiLimitPerEpoch": {
+        "details": "Global ETH limit per epoch defines how much ETH it is allowed      to be consumed by the user address in one epochThis value can have a per user override, set by the faucet manager `ROLE_FAUCET_MANAGER`ETH limit per epoch can be updated by the faucet manager `ROLE_FAUCET_MANAGER`ETH limit per epoch is measured in wei"
+      },
+      "weiLimitPerEpochOverrides": {
+        "details": "Overrides global ETH limit for a user addressZero values (non set values) are ignored and      global ETH limit per epoch (`weiLimitPerEpoch`) is usedMaps `user address => wei limit per epoch (override)`"
+      },
+      "withdrawalStats": {
+        "details": "Keeps track of recent withdrawals to enable ETH supply throttlingEach time the user makes a withdrawal the record is being either      - created (if record doesn't yet exist)      - overwritten (if record is old, i.e. belong to the past epoch)      - cumulatively added (if record is recent, i.e. belongs to the current epoch)Maps `user address -> WithdrawalStat struct`"
+      }
+    },
+    "title": "The Faucet",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "ROLE_ACCESS_MANAGER()": {
+        "notice": "Access manager is responsible for assigning the roles to users,      enabling/disabling global features of the smart contractAccess manager can add, remove and update user roles,      remove and update global features"
+      },
+      "ROLE_UPGRADE_MANAGER()": {
+        "notice": "Upgrade manager is responsible for smart contract upgrades,      see https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable      see https://docs.openzeppelin.com/contracts/4.x/upgradeable"
+      },
+      "evaluateBy(address,uint256,uint256)": {
+        "notice": "Determines the permission bitmask an operator can set on the      target permission setUsed to calculate the permission bitmask to be set when requested     in `updateRole` and `updateFeatures` functions"
+      },
+      "features()": {
+        "notice": "Retrieves globally set of features enabled"
+      },
+      "getImplementation()": {
+        "notice": "Returns an address of the implementation smart contract,      see ERC1967Upgrade._getImplementation()"
+      },
+      "getRole(address)": {
+        "notice": "Reads the permissions (role) for a given user from the `userRoles` mapping"
+      },
+      "isFeatureEnabled(uint256)": {
+        "notice": "Checks if requested set of features is enabled globally on the contract"
+      },
+      "isOperatorInRole(address,uint256)": {
+        "notice": "Checks if operator has all the permissions (role) required"
+      },
+      "isSenderInRole(uint256)": {
+        "notice": "Checks if transaction sender `msg.sender` has all the permissions required"
+      },
+      "mint(address,address,uint192)": {
+        "notice": "Bonus: a restricted access function to mint any ERC20 token"
+      },
+      "updateFeatures(uint256)": {
+        "notice": "Updates set of the globally enabled features (`features`),      taking into account sender's permissions"
+      },
+      "updateRole(address,uint256)": {
+        "notice": "Updates set of permissions (role) for a given user,      taking into account sender's permissions."
+      },
+      "weiLeftInEpochForUser(address)": {
+        "notice": "Returns the amount of ETH available for a particular user in the current epoch"
+      },
+      "weiLimitPerEpochForUser(address)": {
+        "notice": "Returns the actual ETH limit for a particular user address,      taking into account if it is set for this particular user,      and global limit value if it is not set for the particular user"
+      },
+      "weiWithdrawnInCurrentEpoch(address)": {
+        "notice": "Returns the amount of ETH a particular user already withdrawn in the current epoch"
+      },
+      "withdrawEth(address,uint192)": {
+        "notice": "Restricted access function to withdraw ETH from the faucet"
+      }
+    },
+    "notice": "The Faucet stores some amount of ETH allowing whitelisted      addresses to consume this ETH with a limited (throttled) speedDesigned to be used in test networks like Goerli, Mumbai, etc.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 371,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "_initialized",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint8"
+      },
+      {
+        "astId": 374,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "_initializing",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 1651,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "userRoles",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 1656,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_array(t_uint256)49_storage"
+      },
+      {
+        "astId": 353,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "51",
+        "type": "t_array(t_uint256)50_storage"
+      },
+      {
+        "astId": 668,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "__gap",
+        "offset": 0,
+        "slot": "101",
+        "type": "t_array(t_uint256)50_storage"
+      },
+      {
+        "astId": 1118,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "epochLength",
+        "offset": 0,
+        "slot": "151",
+        "type": "t_uint64"
+      },
+      {
+        "astId": 1121,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "weiLimitPerEpoch",
+        "offset": 8,
+        "slot": "151",
+        "type": "t_uint192"
+      },
+      {
+        "astId": 1126,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "weiLimitPerEpochOverrides",
+        "offset": 0,
+        "slot": "152",
+        "type": "t_mapping(t_address,t_uint192)"
+      },
+      {
+        "astId": 1139,
+        "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+        "label": "withdrawalStats",
+        "offset": 0,
+        "slot": "153",
+        "type": "t_mapping(t_address,t_struct(WithdrawalStat)1133_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_uint256)49_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[49]",
+        "numberOfBytes": "1568"
+      },
+      "t_array(t_uint256)50_storage": {
+        "base": "t_uint256",
+        "encoding": "inplace",
+        "label": "uint256[50]",
+        "numberOfBytes": "1600"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_struct(WithdrawalStat)1133_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct TheFaucetV1.WithdrawalStat)",
+        "numberOfBytes": "32",
+        "value": "t_struct(WithdrawalStat)1133_storage"
+      },
+      "t_mapping(t_address,t_uint192)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint192)",
+        "numberOfBytes": "32",
+        "value": "t_uint192"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_struct(WithdrawalStat)1133_storage": {
+        "encoding": "inplace",
+        "label": "struct TheFaucetV1.WithdrawalStat",
+        "members": [
+          {
+            "astId": 1129,
+            "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+            "label": "lastWithdrawalTimestamp",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint64"
+          },
+          {
+            "astId": 1132,
+            "contract": "contracts/protocol/TheFaucetV1.sol:TheFaucetV1",
+            "label": "weiWithdrawn",
+            "offset": 8,
+            "slot": "0",
+            "type": "t_uint192"
+          }
+        ],
+        "numberOfBytes": "32"
+      },
+      "t_uint192": {
+        "encoding": "inplace",
+        "label": "uint192",
+        "numberOfBytes": "24"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      },
+      "t_uint64": {
+        "encoding": "inplace",
+        "label": "uint64",
+        "numberOfBytes": "8"
+      },
+      "t_uint8": {
+        "encoding": "inplace",
+        "label": "uint8",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}
