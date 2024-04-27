@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.4;
 
-import "../utils/UpgradeableAccessControl.sol";
+import "@lazy-sol/access-control-upgradeable/contracts/UpgradeableAccessControl.sol";
 
 /**
  * @title The Faucet
@@ -144,12 +144,12 @@ contract TheFaucetV1 is UpgradeableAccessControl {
 	event MintProxied(address indexed target, address indexed to, uint192 value);
 
 	/**
-	 * @dev "Constructor replacement" for upgradeable, must be execute immediately after deployment
+	 * @dev "Constructor replacement" for upgradeable, must be executed immediately after deployment
 	 *      see https://docs.openzeppelin.com/upgrades-plugins/1.x/writing-upgradeable#initializers
 	 */
 	function postConstruct() public initializer {
 		// execute parent initializer
-		_postConstruct(msg.sender);
+		_postConstruct(msg.sender, 0);
 
 		// initialize own internal state
 		setEpochParams(1 days, 10 ether);

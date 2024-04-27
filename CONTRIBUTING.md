@@ -1,8 +1,9 @@
 # Contribution Guide
 
-Thank you for your interest in solidity-template, and your will to contribute to it and its ecosystem.
+Thank you for your interest in the project, and your will to contribute to it and its ecosystem.
 This document will help you with the guidelines, tips, and advises on how to contribute into the project(s).
 
+The projects are hosted in the [Lazy So[u]l Org.](https://github.com/lazy-sol/) on GitHub.
 This guide is intended for both the Public/Community Contributors and core team,
 though the levels of access and processes may slightly differ between these types.
 This will be noted where possible.
@@ -21,17 +22,14 @@ This will be noted where possible.
 
 ## Getting Started with Smart Contracts
 
-Smart Contracts are part of the collection of repositories under the
-[vgorin](https://github.com/vgorin/).
+There are several Smart Contracts repos, which are part of the collection of repositories under the
+[Lazy So[u]l](https://github.com/lazy-sol/).
 Some of these repositories are still private and used only by core team for active development,
 while others have been open sourced and allow for the peer review and public contribution.
-Blockchain layer contains the most crucial and security sensitive part of the business logic of the protocol(s)
-and ecosystem. This includes digital assets (ERC20, ERC721, ERC1155 tokens),
-DeFi protocols (staking, yield farming, vesting, etc.), and other components.
 
 ## Reporting Issues
 
-Please open an issue in [GitHub](https://github.com/vgorin/solidity-template) if you find a bug or have a feature request.
+Please open an issue in [GitHub](https://github.com/lazy-sol/) if you find a bug or have a feature request.
 
 Before submitting a bug report or feature request, double check and make sure it hasn't been submitted already.
 
@@ -197,4 +195,4 @@ See also:
 
 Prepared by Basil Gorin
 
-(c) 2017–2023 Basil Gorin
+(c) 2017–2024 Basil Gorin

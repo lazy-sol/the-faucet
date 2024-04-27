@@ -1,19 +1,15 @@
-// deploy: npx hardhat deploy --network goerli --tags TheFaucet_Proxy
-// verify: npx hardhat etherscan-verify --network goerli
+// deploy: npx hardhat deploy --network sepolia --tags TheFaucet_Proxy
+// verify: npx hardhat etherscan-verify --network sepolia --api-key $ETHERSCAN_KEY
 
 // script is built for hardhat-deploy plugin:
 // A Hardhat Plugin For Replicable Deployments And Easy Testing
 // https://www.npmjs.com/package/hardhat-deploy
 
-// BN utils
-const {
-	print_amt,
-} = require("../scripts/include/bn_utils");
-
 // deployment utils (contract state printers)
 const {
+	print_amt,
 	print_contract_details,
-} = require("../scripts/deployment_utils");
+} = require("@lazy-sol/a-missing-gem/deployment_utils");
 
 // to be picked up and executed by hardhat-deploy plugin
 module.exports = async function({deployments, getChainId, getNamedAccounts, getUnnamedAccounts}) {
@@ -36,6 +32,9 @@ module.exports = async function({deployments, getChainId, getNamedAccounts, getU
 		// get the deployment details
 		const v1_deployment = await deployments.get("TheFaucetV1");
 		const v1_contract = new web3.eth.Contract(v1_deployment.abi, v1_deployment.address);
+
+		// print v1 deployment details
+		await print_contract_details(A0, v1_deployment.abi, v1_deployment.address);
 
 		// prepare proxy initialization call bytes
 		const proxy_init_data = v1_contract.methods.postConstruct().encodeABI();
@@ -68,5 +67,5 @@ module.exports = async function({deployments, getChainId, getNamedAccounts, getU
 // Then if another deploy script has such tag as a dependency, then when the latter deploy script has a specific tag
 // and that tag is requested, the dependency will be executed first.
 // https://www.npmjs.com/package/hardhat-deploy#deploy-scripts-tags-and-dependencies
-module.exports.tags = ["TheFaucet_Proxy", "deploy"];
+module.exports.tags = ["TheFaucet_Proxy", "deploy", "v1_0"];
 module.exports.dependencies = ["TheFaucetV1"];

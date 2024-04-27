@@ -1,56 +1,54 @@
 {
-	"name": "the-faucet",
-	"version": "1.0.0",
+	"name": "@lazy-sol/the-faucet",
+	"version": "1.0.1",
 	"description": "An infrastructure for convenient on-demand ETH distribution between team members",
 	"main": "index.js",
 	"engines": {
-		"node": ">=16.20.0"
+		"node": "^18.0.0"
 	},
 	"scripts": {
 		"clean": "hardhat clean",
 		"compile": "hardhat compile",
 		"test": "hardhat test",
 		"coverage": "hardhat coverage",
-		"deploy-goerli": "hardhat deploy --network goerli",
-		"verify-goerli": "hardhat etherscan-verify --network goerli --config hardhat.config-escan.js",
-		"deploy-mumbai": "hardhat deploy --network mumbai",
-		"verify-mumbai": "hardhat etherscan-verify --network mumbai --config hardhat.config-pscan.js",
-		"deploy-binance_testnet": "hardhat deploy --network binance_testnet",
-		"verify-binance_testnet": "hardhat etherscan-verify --network binance_testnet --config hardhat.config-bscan.js",
-		"deploy-mainnet": "hardhat deploy --network mainnet",
-		"verify-mainnet": "hardhat etherscan-verify --network mainnet --config hardhat.config-escan.js",
-		"deploy-polygon": "hardhat deploy --network polygon",
-		"verify-polygon": "hardhat etherscan-verify --network polygon --config hardhat.config-pscan.js",
-		"deploy-binance": "hardhat deploy --network binance",
-		"verify-binance": "hardhat etherscan-verify --network binance --config hardhat.config-bscan.js"
+		"verify-testnet": "npm run verify-sepolia && npm run verify-binance_testnet && npm run verify-opBnb_testnet && npm run verify-base_sepolia",
+		"verify": "npm run verify-mainnet && npm run verify-binance && npm run verify-opBnb && npm run verify-base_mainnet",
+		"verify-sepolia": "hardhat etherscan-verify --network sepolia --api-key $ETHERSCAN_KEY",
+		"verify-binance_testnet": "hardhat etherscan-verify --network binance_testnet --api-key $BSCSCAN_KEY",
+		"verify-opBnb_testnet": "hardhat etherscan-verify --network opBnb_testnet --api-key $BSCSCAN_KEY --api-url https://api-opbnb-testnet.bscscan.com/",
+		"verify-base_sepolia": "hardhat etherscan-verify --network base_sepolia --api-key $BASESCAN_KEY --api-url https://api-sepolia.basescan.org/",
+		"verify-mainnet": "hardhat etherscan-verify --network mainnet --api-key $ETHERSCAN_KEY",
+		"verify-binance": "hardhat etherscan-verify --network binance --api-key $BSCSCAN_KEY",
+		"verify-opBnb": "hardhat etherscan-verify --network opBnb --api-key $BSCSCAN_KEY --api-url https://opbnbscan.com",
+		"verify-base_mainnet": "hardhat etherscan-verify --network base_mainnet --api-key $BASESCAN_KEY --api-url https://api.basescan.org"
 	},
 	"keywords": [],
 	"author": "Basil Gorin",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/vgorin/the-faucet.git"
+		"url": "git+ssh://git@github.com:lazy-sol/the-faucet.git"
 	},
 	"bugs": {
-		"url": "https://github.com/vgorin/the-faucet/issues"
+		"url": "https://github.com/lazy-sol/the-faucet/issues"
 	},
-	"homepage": "https://github.com/vgorin/the-faucet#readme",
-	"devDependencies": {
-		"@nomicfoundation/hardhat-network-helpers": "^1.0.8",
-		"@nomiclabs/hardhat-etherscan": "^3.1.7",
+	"homepage": "https://github.com/lazy-sol/the-faucet#readme",
+	"dependencies": {
+		"@lazy-sol/a-missing-gem": "^1.0.2",
+		"@lazy-sol/access-control-upgradeable": "^1.0.4",
 		"@nomiclabs/hardhat-truffle5": "^2.0.7",
 		"@nomiclabs/hardhat-web3": "^2.0.0",
 		"@openzeppelin/contracts": "4.9.3",
 		"@openzeppelin/contracts-upgradeable": "4.9.3",
-		"@openzeppelin/test-helpers": "^0.5.15",
-		"chai": "^4.3.7",
-		"dotenv": "^16.3.1",
-		"hardhat": "^2.17.1",
+		"hardhat": "^2.16.0",
 		"hardhat-dependency-compiler": "^1.1.3",
-		"hardhat-deploy": "^0.11.36",
-		"hardhat-gas-reporter": "^1.0.8",
-		"loglevel": "^1.8.1",
-		"solidity-coverage": "^0.8.4"
+		"hardhat-deploy": "^0.11.45"
+	},
+	"devDependencies": {
+		"@lazy-sol/zeppelin-test-helpers": "^1.0.0",
+		"chai": "^4.4.1",
+		"@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+		"solidity-coverage": "^0.8.8"
 	},
 	"overrides": {
 		"minimatch": "^3.0.5",

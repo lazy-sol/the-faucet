@@ -1,19 +1,15 @@
-// deploy: npx hardhat deploy --network goerli --tags TheFaucetV1
-// verify: npx hardhat etherscan-verify --network goerli
+// deploy: npx hardhat deploy --network sepolia --tags TheFaucetV1
+// verify: npx hardhat etherscan-verify --network sepolia --api-key $ETHERSCAN_KEY
 
 // script is built for hardhat-deploy plugin:
 // A Hardhat Plugin For Replicable Deployments And Easy Testing
 // https://www.npmjs.com/package/hardhat-deploy
 
-// BN utils
-const {
-	print_amt,
-} = require("../scripts/include/bn_utils");
-
 // deployment utils (contract state printers)
 const {
+	print_amt,
 	print_contract_details,
-} = require("../scripts/deployment_utils");
+} = require("@lazy-sol/a-missing-gem/deployment_utils");
 
 // to be picked up and executed by hardhat-deploy plugin
 module.exports = async function({deployments, getChainId, getNamedAccounts, getUnnamedAccounts}) {
@@ -32,14 +28,14 @@ module.exports = async function({deployments, getChainId, getNamedAccounts, getU
 
 	// TheFaucetV1
 	{
-		// deploy if required
+		// deploy implementation (v1) if required
 		await deployments.deploy("TheFaucetV1", {
 			// address (or private key) that will perform the transaction.
 			// you can use `getNamedAccounts` to retrieve the address you want by name.
 			from: A0,
 			contract: "TheFaucetV1",
 			// the list of argument for the constructor (or the upgrade function in case of proxy)
-			args: [],
+			// args: [],
 			// if set it to true, will not attempt to deploy even if the contract deployed under the same name is different
 			skipIfAlreadyDeployed: true,
 			// if true, it will log the result of the deployment (tx hash, address and gas used)
@@ -60,4 +56,4 @@ module.exports = async function({deployments, getChainId, getNamedAccounts, getU
 // Then if another deploy script has such tag as a dependency, then when the latter deploy script has a specific tag
 // and that tag is requested, the dependency will be executed first.
 // https://www.npmjs.com/package/hardhat-deploy#deploy-scripts-tags-and-dependencies
-module.exports.tags = ["TheFaucetV1", "deploy"];
+module.exports.tags = ["TheFaucetV1", "deploy", "v1_0"];

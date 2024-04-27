@@ -13,7 +13,7 @@ const {
 	constants,
 	expectEvent,
 	expectRevert,
-} = require("@openzeppelin/test-helpers");
+} = require("@lazy-sol/zeppelin-test-helpers");
 const {
 	assert,
 	expect,
@@ -23,11 +23,6 @@ const {
 	ZERO_ADDRESS,
 	ZERO_BYTES32,
 } = constants;
-
-// BN constants and utilities
-const {
-	toBN,
-} = require("../../scripts/include/bn_utils");
 
 // ACL features and roles
 const {
@@ -45,7 +40,6 @@ const {
 	faucet_deploy,
 	mintable_noop_deploy,
 } = require("./include/deployment_routines");
-const {behavesLikeACL} = require("../util/include/acl.behaviour");
 
 // run The Faucet tests
 contract("The Faucet tests", function(accounts) {
@@ -254,10 +248,10 @@ contract("The Faucet tests", function(accounts) {
 						});
 						it("'RoleUpdated' event is emitted", async function() {
 							expectEvent(receipt, "RoleUpdated", {
-								_by: faucet.address,
-								_to: a1,
-								_requested: ROLE_FAUCET_USER + "",
-								_assigned: ROLE_FAUCET_USER + "",
+								// by: faucet.address,
+								operator: a1,
+								requested: ROLE_FAUCET_USER + "",
+								assigned: ROLE_FAUCET_USER + "",
 							});
 						});
 						it("the addresses added become faucet users ROLE_FAUCET_USER", async function() {
@@ -280,10 +274,10 @@ contract("The Faucet tests", function(accounts) {
 						});
 						it("'RoleUpdated' event is emitted", async function() {
 							expectEvent(receipt, "RoleUpdated", {
-								_by: faucet.address,
-								_to: a1,
-								_requested: "0",
-								_assigned: "0",
+								// by: faucet.address,
+								operator: a1,
+								requested: "0",
+								assigned: "0",
 							});
 						});
 						it("the addresses removed stop being faucet users ROLE_FAUCET_USER", async function() {

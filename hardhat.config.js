@@ -21,6 +21,10 @@
  *     or
  *   - MNEMONIC5 – goerli mnemonic, 12 words
  *
+ *   - P_KEY11155111 – sepolia private key, should start with 0x
+ *     or
+ *   - MNEMONIC11155111 – sepolia mnemonic, 12 words
+ *
  *   - P_KEY137 – polygon/matic private key, should start with 0x
  *     or
  *   - MNEMONIC137 – polygon/matic mnemonic, 12 words
@@ -37,6 +41,18 @@
  *     or
  *   - MNEMONIC97 – Binance Smart Chain (BSC) testnet mnemonic, 12 words
  *
+ *   - P_KEY8453 – Base Mainnet Optimistic Rollup (L2) private key, should start with 0x
+ *     or
+ *   - MNEMONIC8453 – Base Mainnet Optimistic Rollup (L2) mnemonic, 12 words
+ *
+ *   - P_KEY84531 – Base Goerli (testnet) Optimistic Rollup (L2) private key, should start with 0x
+ *     or
+ *   - MNEMONIC84531 – Base Goerli (testnet) Optimistic Rollup (L2) mnemonic, 12 words
+ *
+ *   - P_KEY84532 – Base Sepolia (testnet) Optimistic Rollup (L2) private key, should start with 0x
+ *     or
+ *   - MNEMONIC84532 – Base Sepolia (testnet) Optimistic Rollup (L2) mnemonic, 12 words
+ *
  *   - ALCHEMY_KEY – Alchemy API key
  *     or
  *   - INFURA_KEY – Infura API key (Project ID)
@@ -46,26 +62,23 @@
  *   - POLYSCAN_KEY – polygonscan API key
  *
  *   - BSCSCAN_KEY – BscScan API key
+ *
+ *   - BASESCAN_KEY – BaseScan API key
+ *
+ *   - REPORT_GAS - optional, set it to true to print gas usage info
  */
-
-// Loads env variables from .env file
-require('dotenv').config()
 
 // Enable Truffle 5 plugin for tests
 // https://hardhat.org/guides/truffle-testing.html
 require("@nomiclabs/hardhat-truffle5");
-
-// enable etherscan integration
-// https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html
-require("@nomiclabs/hardhat-etherscan");
 
 // enable Solidity-coverage
 // https://hardhat.org/plugins/solidity-coverage.html
 require("solidity-coverage");
 
 // enable hardhat-gas-reporter
-// https://hardhat.org/plugins/hardhat-gas-reporter.html
-require("hardhat-gas-reporter");
+// https://github.com/cgewecke/hardhat-gas-reporter
+// require("hardhat-gas-reporter");
 
 // compile Solidity sources directly from NPM dependencies
 // https://github.com/ItsNickBarry/hardhat-dependency-compiler
@@ -118,6 +131,14 @@ else if(process.env.P_KEY5 && !process.env.P_KEY5.startsWith("0x")) {
 	console.warn("P_KEY5 doesn't start with 0x. Appended 0x");
 	process.env.P_KEY5 = "0x" + process.env.P_KEY5;
 }
+if(!process.env.MNEMONIC11155111 && !process.env.P_KEY11155111) {
+	console.warn("neither MNEMONIC11155111 nor P_KEY11155111 is not set. Sepolia deployments won't be available");
+	process.env.MNEMONIC11155111 = FAKE_MNEMONIC;
+}
+else if(process.env.P_KEY11155111 && !process.env.P_KEY11155111.startsWith("0x")) {
+	console.warn("P_KEY11155111 doesn't start with 0x. Appended 0x");
+	process.env.P_KEY11155111 = "0x" + process.env.P_KEY11155111;
+}
 if(!process.env.MNEMONIC137 && !process.env.P_KEY137) {
 	console.warn("neither MNEMONIC137 nor P_KEY137 is not set. Polygon mainnet deployments won't be available");
 	process.env.MNEMONIC137 = FAKE_MNEMONIC;
@@ -148,16 +169,36 @@ if(!process.env.MNEMONIC97 && !process.env.P_KEY97) {
 }
 else if(process.env.P_KEY97 && !process.env.P_KEY97.startsWith("0x")) {
 	console.warn("P_KEY97 doesn't start with 0x. Appended 0x");
-	process.env.P_KEY137 = "0x" + process.env.P_KEY97;
+	process.env.P_KEY97 = "0x" + process.env.P_KEY97;
+}
+if(!process.env.MNEMONIC8453 && !process.env.P_KEY8453) {
+	console.warn("neither MNEMONIC8453 nor P_KEY8453 is not set. Base Mainnet deployments won't be available");
+	process.env.MNEMONIC8453 = FAKE_MNEMONIC;
+}
+else if(process.env.P_KEY8453 && !process.env.P_KEY8453.startsWith("0x")) {
+	console.warn("P_KEY8453 doesn't start with 0x. Appended 0x");
+	process.env.P_KEY8453 = "0x" + process.env.P_KEY8453;
+}
+if(!process.env.MNEMONIC84531 && !process.env.P_KEY84531) {
+	console.warn("neither MNEMONIC84531 nor P_KEY84531 is not set. Base Goerli (testnet) deployments won't be available");
+	process.env.MNEMONIC84531 = FAKE_MNEMONIC;
+}
+else if(process.env.P_KEY84531 && !process.env.P_KEY84531.startsWith("0x")) {
+	console.warn("P_KEY84531 doesn't start with 0x. Appended 0x");
+	process.env.P_KEY84531 = "0x" + process.env.P_KEY84531;
+}
+if(!process.env.MNEMONIC84532 && !process.env.P_KEY84532) {
+	console.warn("neither MNEMONIC84532 nor P_KEY84532 is not set. Base Sepolia (testnet) deployments won't be available");
+	process.env.MNEMONIC84531 = FAKE_MNEMONIC;
+}
+else if(process.env.P_KEY84532 && !process.env.P_KEY84532.startsWith("0x")) {
+	console.warn("P_KEY84532 doesn't start with 0x. Appended 0x");
+	process.env.P_KEY84532 = "0x" + process.env.P_KEY84532;
 }
 if(!process.env.INFURA_KEY && !process.env.ALCHEMY_KEY) {
 	console.warn("neither INFURA_KEY nor ALCHEMY_KEY is not set. Deployments may not be available");
 	process.env.INFURA_KEY = "";
 	process.env.ALCHEMY_KEY = "";
-}
-if(!process.env.ETHERSCAN_KEY) {
-	console.warn("ETHERSCAN_KEY is not set. Deployed smart contract code verification won't be available");
-	process.env.ETHERSCAN_KEY = "";
 }
 if(!process.env.ETHERSCAN_KEY) {
 	console.warn("ETHERSCAN_KEY is not set. Deployed smart contract code verification won't be available");
@@ -170,6 +211,10 @@ if(!process.env.POLYSCAN_KEY) {
 if(!process.env.BSCSCAN_KEY) {
 	console.warn("BSCSCAN_KEY is not set. Deployed smart contract code verification won't be available on BscScan");
 	process.env.BSCSCAN_KEY = "";
+}
+if(!process.env.BASESCAN_KEY) {
+	console.warn("BASESCAN_KEY is not set. Deployed smart contract code verification won't be available on BaseScan");
+	process.env.BASESCAN_KEY = "";
 }
 
 /**
@@ -221,27 +266,47 @@ module.exports = {
 			url: get_endpoint_url("goerli"),
 			accounts: get_accounts(process.env.P_KEY5, process.env.MNEMONIC5),
 		},
+		// https://sepolia.etherscan.io/
+		sepolia: {
+			url: get_endpoint_url("sepolia"),
+			accounts: get_accounts(process.env.P_KEY11155111, process.env.MNEMONIC11155111),
+		},
 		// matic/polygon L2 mainnet
 		// https://polygonscan.com/
 		polygon: {
-			url: "https://polygon-rpc.com/",
+			url: get_endpoint_url("polygon"),
 			accounts: get_accounts(process.env.P_KEY137, process.env.MNEMONIC137),
 		},
 		// matic/polygon L1 testnet – Mumbai
 		// https://mumbai.polygonscan.com/
 		mumbai: {
-			url: "https://rpc-mumbai.maticvigil.com",
+			url: get_endpoint_url("mumbai"),
 			accounts: get_accounts(process.env.P_KEY80001, process.env.MNEMONIC80001),
 		},
 		// Binance Smart Chain (BSC) L2 mainnet
 		binance: {
-			url: "https://bsc-dataseed1.binance.org/",
+			url: get_endpoint_url("binance"),
 			accounts: get_accounts(process.env.P_KEY56, process.env.MNEMONIC56),
 		},
 		// Binance Smart Chain (BSC) L2 testnet
 		binance_testnet: {
-			url: "https://data-seed-prebsc-1-s3.binance.org:8545/",
+			url: get_endpoint_url("binance_testnet"),
 			accounts: get_accounts(process.env.P_KEY97, process.env.MNEMONIC97),
+		},
+		// Base Mainnet Optimistic Rollup (L2)
+		base_mainnet: {
+			url: get_endpoint_url("base_mainnet"),
+			accounts: get_accounts(process.env.P_KEY8453, process.env.MNEMONIC8453),
+		},
+		// Base Testnet Optimistic Rollup (L2)
+		base_goerli: {
+			url: get_endpoint_url("base_goerli"),
+			accounts: get_accounts(process.env.P_KEY84531, process.env.MNEMONIC84531),
+		},
+		// Base Testnet Optimistic Rollup (L2)
+		base_sepolia: {
+			url: get_endpoint_url("base_sepolia"),
+			accounts: get_accounts(process.env.P_KEY84532, process.env.MNEMONIC84532),
 		},
 	},
 
@@ -250,7 +315,7 @@ module.exports = {
 		// https://hardhat.org/guides/compile-contracts.html
 		compilers: [
 			{ // project main compiler version
-				version: "0.8.11",
+				version: "0.8.4",
 				settings: {
 					optimizer: {
 						enabled: true,
@@ -279,29 +344,6 @@ module.exports = {
 		enableTimeouts: false,
 		// https://github.com/mochajs/mocha/issues/3813
 		timeout: false,
-	},
-
-	// Configure etherscan integration
-	// https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html
-	etherscan: {
-		// list of supported networks: npx hardhat verify --list-networks
-		apiKey: {
-			// Your API key for Etherscan
-			// Obtain one at https://etherscan.io/
-			mainnet: process.env.ETHERSCAN_KEY,
-			ropsten: process.env.ETHERSCAN_KEY,
-			rinkeby: process.env.ETHERSCAN_KEY,
-			kovan: process.env.ETHERSCAN_KEY,
-			goerli: process.env.ETHERSCAN_KEY,
-			// Your API key for Polygonscan
-			// Obtain one at https://polygonscan.com/
-			polygon: process.env.POLYSCAN_KEY,
-			polygonMumbai: process.env.POLYSCAN_KEY,
-			// Your API key for BSC Scan
-			// Obtain one at https://bscscan.com/
-			bsc: process.env.BSCSCAN_KEY,
-			bscTestnet: process.env.BSCSCAN_KEY,
-		}
 	},
 
 	// hardhat-gas-reporter will be disabled by default, use REPORT_GAS environment variable to enable it
@@ -349,6 +391,30 @@ function get_endpoint_url(network_name) {
 	if(process.env.GOERLI_RPC_URL && network_name === "goerli") {
 		return process.env.GOERLI_RPC_URL;
 	}
+	if(process.env.SEPOLIA_RPC_URL && network_name === "sepolia") {
+		return process.env.SEPOLIA_RPC_URL;
+	}
+	if(process.env.POLYGON_RPC_URL && network_name === "polygon") {
+		return process.env.POLYGON_RPC_URL;
+	}
+	if(process.env.MUMBAI_RPC_URL && network_name === "mumbai") {
+		return process.env.MUMBAI_RPC_URL;
+	}
+	if(process.env.BSC_RPC_URL && network_name === "binance") {
+		return process.env.BSC_RPC_URL;
+	}
+	if(process.env.BSC_TESTNET_RPC_URL && network_name === "binance_testnet") {
+		return process.env.BSC_TESTNET_RPC_URL;
+	}
+	if(process.env.BASE_RPC_URL && network_name === "base_mainnet") {
+		return process.env.BASE_RPC_URL;
+	}
+	if(process.env.BASE_GOERLI_RPC_URL && network_name === "base_goerli") {
+		return process.env.BASE_GOERLI_RPC_URL;
+	}
+	if(process.env.BASE_SEPOLIA_RPC_URL && network_name === "base_sepolia") {
+		return process.env.BASE_SEPOLIA_RPC_URL;
+	}
 
 	// try the alchemy next
 	// create a key: https://www.alchemy.com/
@@ -359,18 +425,45 @@ function get_endpoint_url(network_name) {
 			case "rinkeby": return "https://eth-rinkeby.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
 			case "kovan": return "https://eth-kovan.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
 			case "goerli": return "https://eth-goerli.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
+			case "sepolia": return "https://eth-sepolia.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
+			case "polygon": return "https://polygon-mainnet.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY;
+			case "mumbai": return "https://polygon-mumbai.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY;
+			case "base_mainnet": return "https://base-mainnet.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY;
+			case "base_goerli": return "https://base-goerli.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY;
+			case "base_sepolia": return "https://base-sepolia.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY;
 		}
 	}
 
 	// fallback to infura
 	// create a key: https://infura.io/
-	switch(network_name) {
-		case "mainnet": return "https://mainnet.infura.io/v3/" + process.env.INFURA_KEY;
-		case "ropsten": return "https://ropsten.infura.io/v3/" + process.env.INFURA_KEY;
-		case "rinkeby": return "https://rinkeby.infura.io/v3/" + process.env.INFURA_KEY;
-		case "kovan": return "https://kovan.infura.io/v3/" + process.env.INFURA_KEY;
-		case "goerli": return "https://goerli.infura.io/v3/" + process.env.INFURA_KEY;
+	if(process.env.INFURA_KEY) {
+		switch(network_name) {
+			case "mainnet": return "https://mainnet.infura.io/v3/" + process.env.INFURA_KEY;
+			case "ropsten": return "https://ropsten.infura.io/v3/" + process.env.INFURA_KEY;
+			case "rinkeby": return "https://rinkeby.infura.io/v3/" + process.env.INFURA_KEY;
+			case "kovan": return "https://kovan.infura.io/v3/" + process.env.INFURA_KEY;
+			case "goerli": return "https://goerli.infura.io/v3/" + process.env.INFURA_KEY;
+			case "sepolia": return "https://sepolia.infura.io/v3/" + process.env.INFURA_KEY;
+			case "polygon": return "https://polygon-mainnet.infura.io/v3/" + process.env.INFURA_KEY;
+			case "mumbai": return "https://polygon-mumbai.infura.io/v3/" + process.env.INFURA_KEY;
+		}
 	}
+
+	// some networks don't require API key
+	switch(network_name) {
+		case "polygon": return "https://polygon-rpc.com/";
+		case "mumbai": return "https://rpc-mumbai.maticvigil.com";
+		case "binance": return "https://bsc-dataseed1.binance.org/";
+		case "binance_testnet":  return "https://data-seed-prebsc-1-s3.binance.org:8545/";
+		case "opBnb": return "https://opbnb-mainnet.nodereal.io/v1/64a9df0874fb4a93b9d0a3849de012d3";
+		case "opBnb_testnet": return "https://opbnb-testnet.nodereal.io/v1/9989d39cb7484ee9abcec2132a242315";
+		case "base_mainnet": return "https://mainnet.base.org";
+		case "base_goerli": return "https://goerli.base.org";
+		case "base_sepolia": return "https://sepolia.base.org";
+	}
+
+	// fallback to default JSON_RPC_URL (if set)
+	return process.env.JSON_RPC_URL || "";
 }
 
 /**

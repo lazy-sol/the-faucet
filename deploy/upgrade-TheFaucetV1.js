@@ -1,19 +1,14 @@
-// upgrade: npx hardhat deploy --network goerli --tags upgrade-TheFaucetV1
-// verify: npx hardhat etherscan-verify --network goerli
+// upgrade: npx hardhat deploy --network sepolia --tags upgrade-TheFaucetV1
 
 // script is built for hardhat-deploy plugin:
 // A Hardhat Plugin For Replicable Deployments And Easy Testing
 // https://www.npmjs.com/package/hardhat-deploy
 
-// BN utils
-const {
-	print_amt,
-} = require("../scripts/include/bn_utils");
-
 // deployment utils (contract state printers)
 const {
+	print_amt,
 	print_contract_details,
-} = require("../scripts/deployment_utils");
+} = require("@lazy-sol/a-missing-gem/deployment_utils");
 
 // to be picked up and executed by hardhat-deploy plugin
 module.exports = async function({deployments, getChainId, getNamedAccounts, getUnnamedAccounts}) {
@@ -67,5 +62,5 @@ module.exports = async function({deployments, getChainId, getNamedAccounts, getU
 // Then if another deploy script has such tag as a dependency, then when the latter deploy script has a specific tag
 // and that tag is requested, the dependency will be executed first.
 // https://www.npmjs.com/package/hardhat-deploy#deploy-scripts-tags-and-dependencies
-module.exports.tags = ["upgrade-TheFaucetV1", "upgrade"];
+module.exports.tags = ["upgrade-TheFaucetV1", "upgrade", "v1_0"];
 module.exports.dependencies = ["TheFaucetV1", "TheFaucet_Proxy"];
