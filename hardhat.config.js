@@ -1,6 +1,6 @@
 /**
  * default Hardhat configuration which uses account mnemonic to derive accounts
- * script expects following environment variables to be set:
+ * script supports the following environment variables set:
  *   - P_KEY1 – mainnet private key, should start with 0x
  *     or
  *   - MNEMONIC1 – mainnet mnemonic, 12 words
@@ -53,6 +53,10 @@
  *     or
  *   - MNEMONIC84532 – Base Sepolia (testnet) Optimistic Rollup (L2) mnemonic, 12 words
  *
+ *   - P_KEY – Custom network (defined by its JSON-RPC) private key, should start with 0x
+ *     or
+ *   - MNEMONIC – Custom network (defined by its JSON-RPC) mnemonic, 12 words
+ *
  *   - ALCHEMY_KEY – Alchemy API key
  *     or
  *   - INFURA_KEY – Infura API key (Project ID)
@@ -88,6 +92,13 @@ require("hardhat-dependency-compiler");
 // keeping track of them and replicating the same environment for testing
 // https://www.npmjs.com/package/hardhat-deploy
 require("hardhat-deploy");
+
+// automatically generate TypeScript bindings for smart contracts while using Hardhat
+// TypeScript bindings help IDEs to properly recognize compiled contracts' ABIs
+// https://github.com/dethcrypto/TypeChain/tree/master/packages/hardhat
+// npm install -D typechain @typechain/hardhat @typechain/truffle-v5
+// run: npx hardhat typechain
+// require("@typechain/hardhat");
 
 // verify environment setup, display warning if required, replace missing values with fakes
 const FAKE_MNEMONIC = "test test test test test test test test test test test junk";
@@ -189,11 +200,18 @@ else if(process.env.P_KEY84531 && !process.env.P_KEY84531.startsWith("0x")) {
 }
 if(!process.env.MNEMONIC84532 && !process.env.P_KEY84532) {
 	console.warn("neither MNEMONIC84532 nor P_KEY84532 is not set. Base Sepolia (testnet) deployments won't be available");
-	process.env.MNEMONIC84531 = FAKE_MNEMONIC;
+	process.env.MNEMONIC84532 = FAKE_MNEMONIC;
 }
 else if(process.env.P_KEY84532 && !process.env.P_KEY84532.startsWith("0x")) {
 	console.warn("P_KEY84532 doesn't start with 0x. Appended 0x");
 	process.env.P_KEY84532 = "0x" + process.env.P_KEY84532;
+}
+if(!process.env.MNEMONIC && !process.env.P_KEY) {
+	process.env.MNEMONIC = FAKE_MNEMONIC;
+}
+else if(process.env.P_KEY && !process.env.P_KEY.startsWith("0x")) {
+	console.warn("P_KEY doesn't start with 0x. Appended 0x");
+	process.env.P_KEY = "0x" + process.env.P_KEY;
 }
 if(!process.env.INFURA_KEY && !process.env.ALCHEMY_KEY) {
 	console.warn("neither INFURA_KEY nor ALCHEMY_KEY is not set. Deployments may not be available");
@@ -201,7 +219,7 @@ if(!process.env.INFURA_KEY && !process.env.ALCHEMY_KEY) {
 	process.env.ALCHEMY_KEY = "";
 }
 if(!process.env.ETHERSCAN_KEY) {
-	console.warn("ETHERSCAN_KEY is not set. Deployed smart contract code verification won't be available");
+	console.warn("ETHERSCAN_KEY is not set. Deployed smart contract code verification won't be available on etherscan");
 	process.env.ETHERSCAN_KEY = "";
 }
 if(!process.env.POLYSCAN_KEY) {
@@ -308,6 +326,10 @@ module.exports = {
 			url: get_endpoint_url("base_sepolia"),
 			accounts: get_accounts(process.env.P_KEY84532, process.env.MNEMONIC84532),
 		},
+		custom: {
+			url: get_endpoint_url(),
+			accounts: get_accounts(process.env.P_KEY, process.env.MNEMONIC),
+		},
 	},
 
 	// Configure Solidity compiler
@@ -333,6 +355,12 @@ module.exports = {
 				}
 			},
 		]
+	},
+
+	// configure typechain to generate Truffle v5 bindings
+	typechain: {
+		outDir: "typechain",
+		target: "truffle-v5",
 	},
 
 	// Set default mocha options here, use special reporters etc.

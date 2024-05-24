@@ -1,6 +1,6 @@
 {
 	"name": "@lazy-sol/the-faucet",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "An infrastructure for convenient on-demand ETH distribution between team members",
 	"main": "index.js",
 	"engines": {
@@ -34,7 +34,7 @@
 	},
 	"homepage": "https://github.com/lazy-sol/the-faucet#readme",
 	"dependencies": {
-		"@lazy-sol/a-missing-gem": "^1.0.2",
+		"@lazy-sol/a-missing-gem": "^1.0.5",
 		"@lazy-sol/access-control-upgradeable": "^1.0.4",
 		"@nomiclabs/hardhat-truffle5": "^2.0.7",
 		"@nomiclabs/hardhat-web3": "^2.0.0",
@@ -45,9 +45,9 @@
 		"hardhat-deploy": "^0.11.45"
 	},
 	"devDependencies": {
-		"@lazy-sol/zeppelin-test-helpers": "^1.0.0",
-		"chai": "^4.4.1",
+		"@lazy-sol/zeppelin-test-helpers": "^1.0.1",
 		"@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+		"chai": "^4.4.1",
 		"solidity-coverage": "^0.8.8"
 	},
 	"overrides": {
