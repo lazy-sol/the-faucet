@@ -448,12 +448,12 @@ function get_endpoint_url(network_name) {
 	// create a key: https://www.alchemy.com/
 	if(process.env.ALCHEMY_KEY) {
 		switch(network_name) {
-			case "mainnet": return "https://eth-mainnet.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
-			case "ropsten": return "https://eth-ropsten.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
-			case "rinkeby": return "https://eth-rinkeby.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
-			case "kovan": return "https://eth-kovan.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
-			case "goerli": return "https://eth-goerli.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
-			case "sepolia": return "https://eth-sepolia.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
+			case "mainnet": return "https://eth-mainnet.g.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
+			case "ropsten": return "https://eth-ropsten.g.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
+			case "rinkeby": return "https://eth-rinkeby.g.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
+			case "kovan": return "https://eth-kovan.g.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
+			case "goerli": return "https://eth-goerli.g.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
+			case "sepolia": return "https://eth-sepolia.g.alchemyapi.io/v2/" + process.env.ALCHEMY_KEY;
 			case "polygon": return "https://polygon-mainnet.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY;
 			case "mumbai": return "https://polygon-mumbai.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY;
 			case "base_mainnet": return "https://base-mainnet.g.alchemy.com/v2/" + process.env.ALCHEMY_KEY;
